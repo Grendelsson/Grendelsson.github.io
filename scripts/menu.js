@@ -3,6 +3,7 @@
 window.onclick = function(elem){
   var tabName = elem.target.id;
   if(tabName == "burger"){
-    elem.style.left = 100 + "px";
+    setTimout(elem.style.left = 100 + "px", 300);
+    
   }
 }
