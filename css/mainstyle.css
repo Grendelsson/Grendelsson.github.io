@@ -5,6 +5,7 @@
 body {
 	background: #d8d8f3;
 	font-family: Roboto Condensed, sans-serif;
+	padding: 0em;
 }
 #main {
 	display: block;
@@ -14,10 +15,11 @@ body {
 	padding: 1em;
 }
 #header {
-	display: block;
+	position: fixed;
+	padding: 1em 10em 1em 10em;
 	width:100%;
 	background: grey;
-	color: #0e0e0e;
+	color: white;
 }
 #footer {
 	display: block;
