@@ -1,0 +1,17 @@
+/* Project main styling */
+
+body {
+	background: #d8d8f3;
+	font-family: open-sans, sans-serif;
+}
+#main {
+	display: block;
+	clear: both;
+	background: white;
+	margin: 5em 5em 5em 5em;
+	padding: 1em;
+}
+#header, #footer {
+	display: block;
+	clear: both;	
+}
