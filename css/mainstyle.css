@@ -31,6 +31,11 @@ body {
 	bottom: 0;
 	color: white;
 }
+#burger {
+	left: -10px;
+	display: inline-block;
+	background: black;
+}
 h3 {
 	font-family: Open Sans Condensed;
 }
