@@ -13,7 +13,13 @@ body {
 	margin: 5em 5em 5em 5em;
 	padding: 1em;
 }
-#header, #footer {
+#header {
+	display: block;
+	width:100%;
+	background: grey;
+	color: #0e0e0e;
+}
+#footer {
 	display: block;
 	clear: both;	
 }
