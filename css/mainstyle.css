@@ -1,8 +1,10 @@
 /* Project main styling */
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Condensed|Source+Code+Pro:400,600);
+
 body {
 	background: #d8d8f3;
-	font-family: open-sans, sans-serif;
+	font-family: Roboto Condensed, sans-serif;
 }
 #main {
 	display: block;
@@ -14,4 +16,7 @@ body {
 #header, #footer {
 	display: block;
 	clear: both;	
+}
+h3 {
+	font-family: Open Sans Condensed;
 }
