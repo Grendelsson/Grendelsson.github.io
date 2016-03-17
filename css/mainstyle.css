@@ -24,8 +24,12 @@ body {
 	color: white;
 }
 #footer {
-	display: block;
-	clear: both;	
+	position: fixed;
+	clear: both;
+	padding: 1em 10em 1em 10em;
+	left: 0;
+	bottom: 0;
+	color: white;
 }
 h3 {
 	font-family: Open Sans Condensed;
