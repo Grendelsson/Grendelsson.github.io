@@ -32,7 +32,8 @@ body {
 	color: white;
 }
 #burger {
-	position: absolute;
+	position: fixed;
+	top: 0;
 	left: -10px;
 	display: inline-block;
 	background: black;
