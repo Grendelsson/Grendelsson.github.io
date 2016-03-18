@@ -1,5 +1,16 @@
 //Scripts for popout menu interaction
 
+function animate(elem,style,unit,from,to,time) {
+    if(!elem) return;
+    var start = new Date().getTime(),
+        timer = setInterval(function() {
+            var step = Math.min(1,(new Date().getTime()-start)/time);
+            elem.style[style] = (from+step*(to-from))+unit;
+            if( step == 1) clearInterval(timer);
+        },25);
+    elem.style[style] = from+unit;
+}
+
 window.onclick = function(elem){
 if(elem.target.id == "burger"){
 		animate(document.getElementById("Menu"),"left","px",-200,10,100);
