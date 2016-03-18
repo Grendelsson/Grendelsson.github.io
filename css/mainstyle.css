@@ -33,8 +33,6 @@ body {
 }
 #burger, #closeburger {
 	position: fixed;
-	top: 0px;
-	display: inline-block;
 	background: black;
 	padding: 1em;
 }
