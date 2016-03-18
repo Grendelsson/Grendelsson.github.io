@@ -27,13 +27,13 @@ body {
 	position: fixed;
 	clear: both;
 	padding: 1em 10em 1em 10em;
-	left: 0;
+	top: 0;
 	bottom: 0;
 	color: white;
 }
 #burger, #closeburger {
 	position: fixed;
-	left: 0px;
+	top: 0px;
 	display: inline-block;
 	background: black;
 	padding: 1em;
