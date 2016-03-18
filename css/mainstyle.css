@@ -31,7 +31,7 @@ body {
 	bottom: 0;
 	color: white;
 }
-#burger {
+#burger, #closeburger {
 	position: fixed;
 	top: 0;
 	left: -10px;
