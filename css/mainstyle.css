@@ -24,7 +24,7 @@ body {
 	color: white;
 }
 #footer {
-	position: fixed;
+	position: absolute;
 	clear: both;
 	padding: 1em 10em 1em 10em;
 	top: 0;
