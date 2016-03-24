@@ -37,17 +37,17 @@ tr {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 75px;
+	width: 7.5em;
 	background: black;
 	padding: 1em;
 	text-align: center;
 }
 #menu{
 	position: fixed;
-	top: -300px;
+	top: -30.0em;
 	left: 0;
-	width: 75px;
-	height: 300px;
+	width: 7.5em;
+	height: 30.0em;
 	background: #a1a1a1;
 	padding: 1em;
 }
