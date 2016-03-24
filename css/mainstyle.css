@@ -32,7 +32,7 @@ body {
 	color: white;
 }
 #burger, #closeburger {
-	position: float;
+	position: fixed;
 	background: black;
 	padding: 1em;
 }
