@@ -37,7 +37,7 @@ tr {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 3em;
+	width: 4em;
 	background: black;
 	padding: 1em;
 	text-align: center;
@@ -46,7 +46,7 @@ tr {
 	position: fixed;
 	top: -10em;
 	left: 0;
-	width: 3em;
+	width: 4em;
 	height: 10em;
 	background: #a1a1a1;
 	padding: 1em;
