@@ -37,8 +37,8 @@ body {
 	background: black;
 	padding: 1em;
 }
-#menu, #closemenu{
-	position: fixed;
+#menu{
+	position: absolute;
 	top: -100;
 	left: 0;
 	background: black;
