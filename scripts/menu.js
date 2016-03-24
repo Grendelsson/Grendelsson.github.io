@@ -19,7 +19,7 @@ if(elem.target.id == "burger"){
 	}
 	else if(elem.target.id == "closeburger"){
 		animate(document.getElementById("closeburger"),"top","px",100,0,100);
-		animate(document.getElementById("closemenu"),"top","px",0,-100,100);
+		animate(document.getElementById("menu"),"top","px",0,-100,100);
 		elem.target.id = "burger";
 	}
 }
