@@ -37,6 +37,7 @@ body {
 	width: 75px;
 	background: black;
 	padding: 1em;
+	text-align: center;
 }
 #menu{
 	position: fixed;
