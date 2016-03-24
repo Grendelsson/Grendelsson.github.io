@@ -12,11 +12,11 @@ function animate(elem,style,unit,from,to,time) {
 }
 
 window.onclick = function(elem){
-if(elem.target.id == "burger" || elem.target.id == "menu"){
+if(elem.target.id == "burger"){
 		animate(document.getElementById("burger"),"top","px",0,100,100);
 		animate(document.getElementById("menu"),"top","px",-100,0,100);
 		elem.target.id = "closeburger";
-		elem.target.id = "closemenu";
+		document.getElementById("menu").id = "closemenu";
 	}
 	else if(elem.target.id == "closeburger"){
 		animate(document.getElementById("closeburger"),"top","px",100,0,100);
