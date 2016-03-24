@@ -40,7 +40,7 @@ body {
 }
 #menu{
 	position: fixed;
-	top: -100;
+	top: -100px;
 	left: 0;
 	width: 75px;
 	height: 100px;
