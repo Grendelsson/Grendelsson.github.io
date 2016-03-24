@@ -31,7 +31,8 @@ body {
 	color: white;
 }
 #burger, #closeburger {
-	position: inline-block;
+	position: fixed;
+	top: 0;
 	background: black;
 	padding: 1em;
 }
