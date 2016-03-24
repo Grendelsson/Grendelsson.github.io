@@ -44,10 +44,10 @@ tr {
 }
 #menu{
 	position: fixed;
-	top: -10em;
+	top: -15em;
 	left: 0;
 	width: 4em;
-	height: 10em;
+	height: 15em;
 	background: #a1a1a1;
 	padding: 1em;
 }
