@@ -41,6 +41,7 @@ tr {
 	background: black;
 	padding: 1em;
 	text-align: center;
+	cursor: pointer;
 }
 #menu{
 	position: fixed;
