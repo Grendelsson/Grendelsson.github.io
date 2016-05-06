@@ -10,10 +10,11 @@ body {
 tr {
 	margin: 0 1em 0 0;
 }
-a:link, a:hover, a:visited, a:active {
+a:link, a:visited, a:active {
 	color: #fff;
 }
 a:hover {
+	color: red;
 	text-decoration: underline;
 }
 #main {
