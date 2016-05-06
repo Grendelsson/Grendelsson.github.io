@@ -67,6 +67,6 @@ h3 {
 	background-image: url("../images/PICTURE.jpg");
 	display: block;
 	width: 300px;
-	height: auto;
+	height: 300px;
 	z-index: 1;
 }
