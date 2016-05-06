@@ -51,7 +51,7 @@ a:hover {
 	text-align: center;
 	cursor: pointer;
 }
-#menu{
+#menu {
 	position: fixed;
 	top: -15em;
 	left: 0;
@@ -63,6 +63,13 @@ a:hover {
 h3 {
 	font-family: Open Sans Condensed;
 }
-#imgBox{
+#imgBox {
 	background-image: url("../images/PICTURE.jpg");
+}
+
+#imgBox img {
+	display: block;
+	width: 300;
+	height: auto;
+	z-index: 1;
 }
