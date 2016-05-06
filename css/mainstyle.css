@@ -63,3 +63,6 @@ a:hover {
 h3 {
 	font-family: Open Sans Condensed;
 }
+#imgBox{
+	background-image: url("../images/PICTURE.jpg");
+}
