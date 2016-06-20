@@ -13,11 +13,17 @@ var ref = document.referrer;
 else ref=window.location.hostname + window.location.pathname;
 console.log(ref);
 if(ref.split(".").length>2){
-var hostPath = ref.split(".")[2];
-if(hostPath.search("com/")>-1){
-hostPath = hostPath.replace("com/","");
+var hostPathArray = ref.split(".");
+var hostPath = "";
+for (i=1; i<hostPathArray.length; i++){
+if(i.search("/")>-1){
+hostPath = hostPathArray[i];
+if(hostPathArray[i+1]){
+hostPath +=  hostPathArray[i+1];
 }
-console.log(ref.pathname);
+}
+console.log(hostPath);
+}
 }
 console.log(window.location.href);
 
