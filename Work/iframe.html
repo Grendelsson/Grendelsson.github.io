@@ -11,7 +11,7 @@ var hostPath = "";
 if(document.referrer){
 var hostPath = document.referrer.replace(/http\:\/\/|https\:\/\//gi,"");
 }
-else var ref=window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");
+else {var ref = window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");}
 console.log(ref);
 if(ref.split(".").length>2){
 hostPath = ref.slice(ref.search("/")+1);
