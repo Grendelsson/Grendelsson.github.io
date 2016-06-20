@@ -10,7 +10,7 @@
 if(document.referrer){
 var ref = document.referrer.replace(/http\:\/\/|https\:\/\//gi,"");
 }
-else ref=window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");
+else var ref=window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");
 console.log(ref);
 if(ref.split(".").length>2){
 var hostPath= ref.slice(ref.search("/")+1);
