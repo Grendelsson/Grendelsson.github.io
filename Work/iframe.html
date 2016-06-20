@@ -16,7 +16,7 @@ if(ref.split(".").length>2){
 var hostPathArray = ref.split(".");
 var hostPath = "";
 for (i=1; i<hostPathArray.length; i++){
-if(i.search("/")>-1){
+if(hostArray[i].search("/")>-1){
 hostPath = hostPathArray[i];
 if(hostPathArray[i+1]){
 hostPath +=  hostPathArray[i+1];
