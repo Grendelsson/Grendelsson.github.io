@@ -10,10 +10,10 @@
 if(document.referrer){
 var ref = document.referrer;
 }
-else ref=window.location.href;
+else ref=window.location.hostname + window.location.pathname;
 console.log(ref);
 if(ref.split(".").length>2){
-var hostPath = ref.split(".")[2].replace("https://","");
+var hostPath = ref.split(".")[2];
 if(hostPath.search("com/")>-1){
 hostPath = hostPath.replace("com/","");
 }
