@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>iframe_test</title>
+</head>
+<body>
+<div style="position: auto; text-align:center; color: black; background-color: red; z-index: 1;"><p>This is the iframe text</p></div>
+<script>
+var ref = document.referrer;
+console.log(ref);
+var hostPath = ref.split(".")[2].replace("com/","");
+console.log(hostPath);
+</script>
+</body>
+</html>
