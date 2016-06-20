@@ -8,7 +8,8 @@
 <div style="position: auto; text-align:center; color: black; background-color: red; z-index: 1;"><p>This is the iframe text</p></div>
 <script>
 if(document.referrer){
-var ref = document.referrer.replace(/http\:\/\/|https\:\/\//gi,"");
+var ref = document.referrer;
+var hostPath = document.referrer.replace(/http\:\/\/|https\:\/\//gi,"");
 }
 else var ref=window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");
 console.log(ref);
@@ -24,7 +25,8 @@ console.log(hostPath);
   ga('create', 'UA-64766235-1', 'auto');
   ga('send', {
   hitType: 'pageview',
-  page: hostPath || ref
+  page: hostPath,
+  location: ref
 });
 
 </script>
