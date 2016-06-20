@@ -7,14 +7,13 @@
 
 <div style="position: auto; text-align:center; color: black; background-color: red; z-index: 1;"><p>This is the iframe text</p></div>
 <script>
-var hostPath = "";
 if(document.referrer){
-var hostPath = document.referrer.replace(/http\:\/\/|https\:\/\//gi,"");
+var ref = document.referrer.replace(/http\:\/\/|https\:\/\//gi,"");
 }
-else {var ref = window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");}
+else ref=window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");
 console.log(ref);
 if(ref.split(".").length>2){
-hostPath = ref.slice(ref.search("/")+1);
+var hostPath= ref.slice(ref.search("/")+1);
 console.log(hostPath);
 }
 
