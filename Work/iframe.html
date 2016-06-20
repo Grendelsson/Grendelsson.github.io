@@ -8,9 +8,11 @@
 <script>
 var ref = document.referrer;
 console.log(ref);
+if(ref.split(".").length>2){
 var hostPath = ref.split(".")[2];
 if(hostPath.search("com/")>-1){
 hostPath = hostPath.replace("com/","");
+}
 }
 console.log(hostPath);
 console.log(window.href);
