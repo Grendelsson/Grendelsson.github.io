@@ -2,4 +2,7 @@
 CACHE MANIFEST
 # v1 - 21-06-2016
 # This is a comment.
-https://grendelsson.github.io/Home
+Home.html
+
+FALLBACK:
+index.html
