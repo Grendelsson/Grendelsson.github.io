@@ -81,8 +81,5 @@ input {
 	border: 1px solid grey;
 }
 label {
-	visibility: hidden;
-}
-label::after{
 	visibility: visible;
 }
