@@ -79,6 +79,8 @@ h3 {
 input {
 	background-color: transparent;
 	border: 1px solid grey;
+	border-radius: 3px;
+	color: white;
 }
 label {
 	visibility: visible;
