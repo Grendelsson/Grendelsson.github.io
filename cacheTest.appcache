@@ -3,6 +3,8 @@ CACHE MANIFEST
 # This is a comment.
 Home.html
 scripts/menu.js
+
+NETWORK:
 css/mainstyle.css
 
 FALLBACK:
