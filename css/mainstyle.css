@@ -80,3 +80,9 @@ input {
 	background-color: transparent;
 	border: 1px solid grey;
 }
+label {
+	visibility: hidden;
+}
+label::after{
+	visibility: visible;
+}
