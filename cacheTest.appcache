@@ -2,7 +2,8 @@ CACHE MANIFEST
 # v1 - 21-06-2016
 # This is a comment.
 Home.html
-scripts/mainscript.js
+scripts/menu.js
+css/mainstyle.css
 
 FALLBACK:
 index.html
