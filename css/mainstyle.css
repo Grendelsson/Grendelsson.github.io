@@ -65,7 +65,7 @@ a:hover {
 	z-index: 9;
 }
 h3 {
-	font-family: Open Sans Condensed;
+	font-family: Open Sans Condensed, sans-serif;
 }
 #imgBox {
 	background-image: url("../images/PICTURE.jpg");
