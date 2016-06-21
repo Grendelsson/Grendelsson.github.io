@@ -78,9 +78,13 @@ h3 {
 }
 input {
 	background-color: transparent;
-	border: 1px solid black;
+	border: 1px solid grey;
 	border-radius: 3px;
 	color: white;
+	padding: 5px;
+}
+input:hover{
+	border-color: black;
 }
 label {
 	visibility: visible;
