@@ -88,10 +88,10 @@ input {
 	border-radius: 3px;
 	color: white;
 	padding: 5px;
+	font-weight: bold;
 }
 input:hover{
 	border-color: black;
-	font-weight: bold;
 }
 label {
 	visibility: visible;
