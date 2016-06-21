@@ -86,6 +86,9 @@ input {
 input:hover{
 	border-color: black;
 }
+input:focus{
+	    outline: -webkit-focus-ring-color red 5px;
+}
 label {
 	visibility: visible;
 }
