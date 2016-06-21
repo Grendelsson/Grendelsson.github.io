@@ -76,6 +76,9 @@ h3 {
     	left: 50%;
     	margin-left: -250px;
 }
+form{
+	display: inline-block;
+}
 input {
 	background-color: transparent;
 	border: 1px solid grey;
