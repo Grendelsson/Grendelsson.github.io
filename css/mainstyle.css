@@ -78,6 +78,9 @@ h3 {
 }
 form{
 	display: inline-block;
+	position: absolute;
+	width: 400px;
+	right: 200px;
 }
 input {
 	background-color: transparent;
@@ -88,6 +91,7 @@ input {
 }
 input:hover{
 	border-color: black;
+	font-weight: bold;
 }
 label {
 	visibility: visible;
