@@ -87,7 +87,8 @@ input:hover{
 	border-color: black;
 }
 input:focus{
-	    outline: -webkit-focus-ring-color red 5px;
+	/* -webkit-focus-ring-color = '#ff0000' */
+	    outline: -webkit-focus-ring-color auto 5px;
 }
 label {
 	visibility: visible;
