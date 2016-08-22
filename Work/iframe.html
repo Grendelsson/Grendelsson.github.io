@@ -9,7 +9,7 @@
 <script>
 if(document.referrer){
 var ref = document.referrer;
-var hostPath =window.parent.location.href.replace(/http\:\/\/|https\:\/\//gi,"");
+var hostPath = ref.replace(/http\:\/\/|https\:\/\//gi,"");
 }
 else var ref=window.location.href.replace(/http\:\/\/|https\:\/\//gi,"");
 console.log(ref);
