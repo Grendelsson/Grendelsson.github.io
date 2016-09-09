@@ -67,6 +67,9 @@ a:hover {
 h3 {
 	font-family: Open Sans Condensed, sans-serif;
 }
+#main p:nth-child(2){
+	background-color: #f5f5ef;
+}
 #imgBox {
 	background-image: url("../images/PICTURE.jpg");
 	display: block;
