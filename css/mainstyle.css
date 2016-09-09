@@ -69,7 +69,7 @@ h3 {
 }
 #main p:nth-child(2n+1){
 	background-color: #f5f5ef;
-	padding: 0, 3em, 0, 3em;
+	padding: 3em 0 3em 0;
 }
 #imgBox {
 	background-image: url("../images/PICTURE.jpg");
