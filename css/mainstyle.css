@@ -67,6 +67,10 @@ a:hover {
 h3 {
 	font-family: Open Sans Condensed, sans-serif;
 }
+p{
+	margin: none;
+	
+}
 #main p:nth-child(3){
 	background-color: #f5f5ef;
 }
