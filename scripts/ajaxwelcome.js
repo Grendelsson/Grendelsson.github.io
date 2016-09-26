@@ -6,5 +6,5 @@ function welcomeNote(){
       }
      };
      xhttp.open("POST", "welcome.txt", true);
-     xhttp.send(null);
+     xhttp.send();
    }
