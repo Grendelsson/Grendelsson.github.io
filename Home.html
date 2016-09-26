@@ -4,11 +4,13 @@
 <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
 <link rel="icon" href="/images/AntiFun.jpg" type="image/x-icon"/>
 <title>Home</title>
+	<script src="scripts/menu.js"></script>
+	<script src="scripts/ajaxWelcome.js"></script>
 </head>
 <body>
 
 <div id="header"><em>Header text goes in here</em>
-<form action="/Home" method="get">
+<form action="/Home" method="get" oninput="welcome()">
 	<label id="inputTooltip" class="tooltip" for="nameinput">Hello there!</label>
 	<input type="text" id="nameinput" class="formIn" name="yourName" placeholder="Enter your name" maxlength="15">
 </form>
@@ -49,6 +51,5 @@
 
 <div id="footer">Footer text goes in here</div>
 
-<script src="scripts/menu.js"></script>
 </body>
 </html>
