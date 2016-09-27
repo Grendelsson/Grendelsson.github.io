@@ -106,6 +106,7 @@ label {
 }
 .tooltip{
 	visibility: hidden;
+	text-align: right;
 }
 form:hover .tooltip, form:focus .tooltip{
 	visibility: visible;
