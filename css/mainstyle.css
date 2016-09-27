@@ -84,7 +84,7 @@ h3 {
 form{
 	display: inline-block;
 	position: absolute;
-	float: both;
+	clear: both;
 	width: 400px;
 	right: 200px;
 	max-width: 600px;
