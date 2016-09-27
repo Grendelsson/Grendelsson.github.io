@@ -99,6 +99,9 @@ input {
 input:hover{
 	border-color: black;
 }
+input:focus{
+	background-color: black;
+}
 label {
 	visibility: visible;
 }
