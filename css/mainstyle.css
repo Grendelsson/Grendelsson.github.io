@@ -97,10 +97,11 @@ input {
 	padding: 5px;
 	font-weight: bold;
 	text-align: right;
-	width: 100px;
+	width: 20px;
 }
 input:hover{
 	border-color: black;
+	width: 150px;
 }
 label {
 	visibility: visible;
