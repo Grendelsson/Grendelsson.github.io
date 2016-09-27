@@ -5,6 +5,6 @@ function welcomeNote(){
       document.getElementById("inputTooltip").innerHTML = "Hi there " + document.getElementById("nameinput").value;
       }
      };
-     xhttp.open("GET", "welcome.txt", true);
+     xhttp.open("GET", "", true);
      xhttp.send();
    }
