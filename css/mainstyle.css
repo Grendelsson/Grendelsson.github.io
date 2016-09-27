@@ -108,6 +108,6 @@ label {
 	visibility: hidden;
 	text-align: right;
 }
-form:hover .tooltip, form:visited .tooltip{
+form:hover .tooltip, form:valid .tooltip{
 	visibility: visible;
 }
