@@ -97,6 +97,7 @@ input {
 	padding: 5px;
 	font-weight: bold;
 	text-align: right;
+	width: 100px;
 }
 input:hover{
 	border-color: black;
