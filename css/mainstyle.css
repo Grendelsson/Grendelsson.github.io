@@ -87,7 +87,7 @@ form{
 	float: both;
 	width: 400px;
 	right: 200px;
-	min-width: 300px;
+	max-width: 600px;
 }
 input {
 	background-color: transparent;
