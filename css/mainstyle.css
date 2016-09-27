@@ -99,7 +99,7 @@ input {
 	text-align: right;
 	width: 20px;
 }
-input:hover{
+input:hover, input:focus{
 	border-color: black;
 	width: 150px;
 }
