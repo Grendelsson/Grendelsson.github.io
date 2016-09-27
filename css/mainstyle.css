@@ -84,8 +84,10 @@ h3 {
 form{
 	display: inline-block;
 	position: absolute;
+	float: both;
 	width: 400px;
 	right: 200px;
+	min-width: 300px;
 }
 input {
 	background-color: transparent;
