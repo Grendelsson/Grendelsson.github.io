@@ -11,9 +11,11 @@
       var csvString='"data:text/csv;charset=utf-8,';
       xhttp.onreadystatechange = function(){
         if(xhttp.readyState == 4){
+          console.log("check1");
           blob = xhttp.responseText;
           var blobj = JSON.parse(blob);
           for(i=0;i<blobj.myMainObject.length;i++){
+            console.log(i);
             var tempRow = "Main Object,"+blobj.myMainObject[i].name+"\n";
             tempRow = tempRow.toString();
             csvString += tempRow;
