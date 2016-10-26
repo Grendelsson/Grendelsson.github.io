@@ -15,6 +15,7 @@
           var blobj = JSON.parse(blob);
           for(i=0;i<blobj.myMainObject.length;i++){
             var tempRow = "Main Object,"+blobj.myMainObject[i].name+"\n";
+            tempRow = tempRow.toString();
             csvString += tempRow;
           }
         };
