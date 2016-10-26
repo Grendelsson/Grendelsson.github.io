@@ -23,7 +23,7 @@ xhttp.open("GET","https://grendelsson.github.io/Work/testData");
 xhttp.setRequestHeader("Content-Type", "text/html");
 xhttp.send();
 var dlBlob = new Blob([csvString],{type: 'text/csv;charset=utf-8;' });
-var myLink = document.createElement("link");
+var myLink = document.createElement("a");
 	
                 var url = URL.createObjectURL(dlBlob);
                 link.setAttribute("href", url);
