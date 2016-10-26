@@ -13,7 +13,7 @@ if(xhttp.readyState == 4){
 	var blobj = JSON.parse(blob);
 	console.log(blobj);
 	for(i=0;i<blobj.myMainObject.length;i++){
-		var tempRow = "Main Object,"+blobj.myMainObject[i].name+",";
+		var tempRow = "Main Object,"+blobj.myMainObject[i].name+"\n";
 		csvString+=tempRow;
 	}
 };
@@ -22,6 +22,11 @@ console.log(csvString);
 xhttp.open("GET","https://grendelsson.github.io/Work/testData");
 xhttp.setRequestHeader("Content-Type", "text/html");
 xhttp.send();
+var myLink = document.createElement("link");
+	myLink.setAttribute("download", "myDL");
+                document.body.appendChild(myLink);
+                myLink.click();
+                document.body.removeChild(myLink);
 </script>
 </body>
 </html>
