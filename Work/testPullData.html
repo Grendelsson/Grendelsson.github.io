@@ -6,7 +6,7 @@
 <script>
 var xhttp = new XMLHttpRequest();
 var blob;
-var csvArray=[];
+var csvString;
 xhttp.onreadystatechange = function(){
 if(xhttp.readyState == 4){
 	blob = xhttp.responseText;
@@ -14,10 +14,10 @@ if(xhttp.readyState == 4){
 	console.log(blobj);
 	for(i=0;i<blobj.myMainObject.length;i++){
 		var tempRow = "Main Object,"+blobj.myMainObject[i].name+",";
-		csvArray.push(tempRow);
+		csvString+=tempRow;
 	}
 };
-console.log(csvArray);
+console.log(csvString);
 }
 xhttp.open("GET","https://grendelsson.github.io/Work/testData");
 xhttp.setRequestHeader("Content-Type", "text/html");
