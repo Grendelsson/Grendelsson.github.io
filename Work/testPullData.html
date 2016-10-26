@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<div>Attempting to pull data with AJAX and export as csv</div>
+<script>
+var xhttp = new XMLHttpRequest();
+var blob;
+xhttp.onreadystatechange = function(){
+if(xhttp.readyState == 4){
+console.log(xhttp);
+	blob = xhttp.responseText;
+	var blobj = JSON.parse(blob);
+	console.log(blobj);
+};
+}
+xhttp.open("GET","https://grendelsson.github.io/Work/testData");
+xhttp.setRequestHeader("Content-Type", "text/html");
+xhttp.send();
+</script>
+</body>
+</html>
