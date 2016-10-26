@@ -22,7 +22,11 @@ console.log(csvString);
 xhttp.open("GET","https://grendelsson.github.io/Work/testData");
 xhttp.setRequestHeader("Content-Type", "text/html");
 xhttp.send();
+var dlBlob = new Blob([csvString],{type: 'text/csv;charset=utf-8;' });
 var myLink = document.createElement("link");
+	
+                var url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
 	myLink.setAttribute("download", "myDL");
                 document.body.appendChild(myLink);
                 myLink.click();
