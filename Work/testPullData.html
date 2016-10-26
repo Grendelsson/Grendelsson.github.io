@@ -25,7 +25,7 @@ xhttp.send();
 var dlBlob = new Blob([csvString],{type: 'text/csv;charset=utf-8;' });
 var myLink = document.createElement("link");
 	
-                var url = URL.createObjectURL(blob);
+                var url = URL.createObjectURL(dlBlob);
                 link.setAttribute("href", url);
 	myLink.setAttribute("download", "myDL");
                 document.body.appendChild(myLink);
