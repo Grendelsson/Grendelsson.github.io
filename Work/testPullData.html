@@ -21,9 +21,9 @@
             csvString += tempRow;
           }
         };
-      }
       csvString += '"';
       console.log(csvString);
+      }
       xhttp.open("GET","https://grendelsson.github.io/Work/testData");
       xhttp.setRequestHeader("Content-Type", "text/html");
       xhttp.send();
