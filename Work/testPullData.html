@@ -23,12 +23,12 @@
         };
       csvString += '"';
       console.log(csvString);
+      var encodedUri = encodeURIComponent(csvString);
+      var myLink = document.createElement("a");
       }
       xhttp.open("GET","https://grendelsson.github.io/Work/testData");
       xhttp.setRequestHeader("Content-Type", "text/html");
       xhttp.send();
-      var encodedUri = encodeURIComponent(csvString);
-      var myLink = document.createElement("a");
       myLink.setAttribute("href", encodedUri);
       document.body.appendChild(myLink);
       myLink.setAttribute('download',"myFile.csv");
