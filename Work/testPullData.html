@@ -18,7 +18,11 @@
           var blobj = JSON.parse(blob);
           for (i = 0; i < blobj.myMainObject.length; i++) {
             console.log(i);
-            var tempRow = "Main Object," + blobj.myMainObject[i].name + "\n";
+            var cellString = blobj.myMainObject[i].name;
+            if (cellString.search(/("|,|\n)/g) >= 0) {
+              result = '"' + result + '"';
+            }
+            var tempRow = "Main Object," + cellString + "\n";
             csvString += tempRow;
           }
           console.log(csvString);
