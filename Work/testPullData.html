@@ -18,7 +18,7 @@
           var blobj = JSON.parse(blob);
           for (i = 0; i < blobj.myMainObject.length; i++) {
             console.log(i);
-            var cellString = blobj.myMainObject[i].name;
+            var cellString = blobj.myMainObject[i].name || "";
             if (cellString.search(/("|,|\n)/g) >= 0) {
               cellString = '"' + cellString + '"';
             }
