@@ -3,5 +3,5 @@
 "type": "other"},
 {"name": "Betty",
 "type": "cat"},
-{"name": "Jill"},
+{"type": "Jill"},
 {"name": "Jane"}]}
