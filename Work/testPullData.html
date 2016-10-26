@@ -6,7 +6,7 @@
 <script>
 var xhttp = new XMLHttpRequest();
 var blob;
-var csvString;
+var csvString="";
 xhttp.onreadystatechange = function(){
 if(xhttp.readyState == 4){
 	blob = xhttp.responseText;
@@ -23,7 +23,7 @@ xhttp.setRequestHeader("Content-Type", "text/html");
 xhttp.send();
 var encodedUri = encodeURI(csvString);
 var myLink = document.createElement("a");
-myLink.setAttribute("href", csvString);
+myLink.setAttribute("href", encodedUri);
 	document.body.append(myLink);
 myLink.click;
 </script>
