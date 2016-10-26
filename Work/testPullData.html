@@ -6,13 +6,13 @@
 <script>
 var xhttp = new XMLHttpRequest();
 var blob;
-var csvString="";
+var csvString="data:text/csv;charset=utf-8,";
 xhttp.onreadystatechange = function(){
 if(xhttp.readyState == 4){
 	blob = xhttp.responseText;
 	var blobj = JSON.parse(blob);
 	for(i=0;i<blobj.myMainObject.length;i++){
-		var tempRow = "Main Object,"+blobj.myMainObject[i].name+"'\n'";
+		var tempRow = "Main Object,"+blobj.myMainObject[i].name+"\n";
 		csvString+=tempRow;
 	}
 };
