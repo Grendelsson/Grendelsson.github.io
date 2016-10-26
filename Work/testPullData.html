@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
-<div>Attempting to pull data with AJAX and export as csv</div>
-<script>
-var xhttp = new XMLHttpRequest();
-var blob;
-var csvString="data:text/csv;charset=utf-8,";
-xhttp.onreadystatechange = function(){
-if(xhttp.readyState == 4){
-	blob = xhttp.responseText;
-	var blobj = JSON.parse(blob);
-	for(i=0;i<blobj.myMainObject.length;i++){
-		var tempRow = "Main Object,"+blobj.myMainObject[i].name+"\n";
-		csvString+=tempRow;
-	}
-};
-}
-
-console.log(csvString);
-xhttp.open("GET","https://grendelsson.github.io/Work/testData");
-xhttp.setRequestHeader("Content-Type", "text/html");
-xhttp.send();
-var encodedUri = encodeURIComponent(csvString);
-var myLink = document.createElement("a");
-myLink.setAttribute("href", encodedUri);
-	document.body.appendChild(myLink);
-	myLink.setAttribute('download',"myFile.csv");
-	myLink.click();
-</script>
-</body>
+  <head>
+  </head>
+  <body>
+    <div>Attempting to pull data with AJAX and export as csv
+    </div>
+    <script>
+      var xhttp = new XMLHttpRequest();
+      var blob;
+      var csvString='"data:text/csv;charset=utf-8,';
+      xhttp.onreadystatechange = function(){
+        if(xhttp.readyState == 4){
+          blob = xhttp.responseText;
+          var blobj = JSON.parse(blob);
+          for(i=0;i<blobj.myMainObject.length;i++){
+            var tempRow = "Main Object,"+blobj.myMainObject[i].name+"\n";
+            csvString += tempRow;
+          }
+        };
+      }
+      csvString += '"';
+      console.log(csvString);
+      xhttp.open("GET","https://grendelsson.github.io/Work/testData");
+      xhttp.setRequestHeader("Content-Type", "text/html");
+      xhttp.send();
+      var encodedUri = encodeURIComponent(csvString);
+      var myLink = document.createElement("a");
+      myLink.setAttribute("href", encodedUri);
+      document.body.appendChild(myLink);
+      myLink.setAttribute('download',"myFile.csv");
+      myLink.click();
+    </script>
+  </body>
 </html>
