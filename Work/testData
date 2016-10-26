@@ -1,6 +1,1 @@
-{"myMainObject":[
-  {"subObj1": "value1"},
-  {"subObj2": "value2"},
-  {"subObj3": "value3"},
-  {"subObj4": "value4"}
-]}
+{"myMainObject":[{"subObj1": "value1"},{"subObj2": "value2"},{"subObj3": "value3"},{"subObj4": "value4"}]}
