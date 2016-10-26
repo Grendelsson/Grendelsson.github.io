@@ -24,7 +24,7 @@
           }
           console.log(csvString);
           var myLink = document.createElement("a");
-          myLink.setAttribute("href", "data:text/csv;charset=utf-8," + encodeUriComponent(csvString));
+          myLink.setAttribute("href", "data:text/csv;charset=utf-8," + encodeURIComponent(csvString));
           document.body.appendChild(myLink);
           myLink.setAttribute('download', "myFile.csv");
           myLink.click();
