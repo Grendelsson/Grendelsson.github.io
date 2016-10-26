@@ -9,7 +9,6 @@ var blob;
 var csvArray=[];
 xhttp.onreadystatechange = function(){
 if(xhttp.readyState == 4){
-console.log(xhttp);
 	blob = xhttp.responseText;
 	var blobj = JSON.parse(blob);
 	console.log(blobj);
