@@ -24,16 +24,16 @@
       csvString += '"';
       console.log(csvString);
       var encodedUri = encodeURIComponent(csvString);
-  return encodedUri;
+      var myLink = document.createElement("a");
+      myLink.setAttribute("href", encodedUri);
+        mylink.id = "dlLink";
+      document.body.appendChild(myLink);
+      myLink.setAttribute('download',"myFile.csv");
       }
       xhttp.open("GET","https://grendelsson.github.io/Work/testData");
       xhttp.setRequestHeader("Content-Type", "text/html");
       xhttp.send();
-      var myLink = document.createElement("a");
-      myLink.setAttribute("href", encodedUri);
-      document.body.appendChild(myLink);
-      myLink.setAttribute('download',"myFile.csv");
-      myLink.click();
+      document.getElementById("dlLink").click();
     </script>
   </body>
 </html>
