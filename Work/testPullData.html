@@ -26,14 +26,13 @@
       var encodedUri = encodeURIComponent(csvString);
       var myLink = document.createElement("a");
       myLink.setAttribute("href", encodedUri);
-        mylink.id = "dlLink";
       document.body.appendChild(myLink);
       myLink.setAttribute('download',"myFile.csv");
+      myLink.click();
       }
       xhttp.open("GET","https://grendelsson.github.io/Work/testData");
       xhttp.setRequestHeader("Content-Type", "text/html");
       xhttp.send();
-      document.getElementById("dlLink").click();
     </script>
   </body>
 </html>
