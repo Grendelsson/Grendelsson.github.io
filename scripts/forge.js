@@ -17,7 +17,7 @@ function intersects(x, y, clickX, clickY, width, height) {
 function drawRectangle(myRectangle, context) {
   context.beginPath();
   context.rect(myRectangle.x, myRectangle.y, myRectangle.width, myRectangle.height);
-  context.fillStyle = '#8ED6FF';
+  context.fillStyle = '#fff08e';
   context.fill();
   context.lineWidth = myRectangle.borderWidth;
   context.strokeStyle = 'black';
