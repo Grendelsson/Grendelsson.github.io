@@ -115,5 +115,5 @@ form:hover .tooltip, form:valid .tooltip{
 }
 canvas {
 	background-color: white;
-	border-color: black;
+	border: solid black;
 }
