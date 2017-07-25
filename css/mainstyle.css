@@ -113,3 +113,7 @@ label {
 form:hover .tooltip, form:valid .tooltip{
 	visibility: visible;
 }
+canvas {
+	background-color: white;
+	border-color: black;
+}
