@@ -7,6 +7,13 @@ window.requestAnimFrame = (function(callback) {
     };
 })();
 
+// needs work
+function intersects(x, y, clickX, clickY, width, height) {
+    var dx = x-clickX;
+    var dy = y-clickY;
+    return dx <= width && dy <= height;
+}
+
 function drawRectangle(myRectangle, context) {
   context.beginPath();
   context.rect(myRectangle.x, myRectangle.y, myRectangle.width, myRectangle.height);
@@ -102,8 +109,12 @@ var myRectangle = {
 
 drawRectangle(myRectangle, context);
 
-// Draw out on click
-document.getElementById("myCanvas").onclick = function() {
+// Draw out rectangle
+document.getElementById("myCanvas").onclick = function(e) {
+  // debugging alert
+alert(e.x + " " + e.y + " " + (myRectangle.x+myRectangle.width) + " " + (myRectangle.y+myRectangle.height));
+if(intersects(myRectangle.x, myRectangle.y, e.x, e.y, myRectangle.width, myRectangle.height)){
   var startTime = (new Date()).getTime();
   stretch2(myRectangle, canvas, context, startTime);
+  }
 }
