@@ -40,6 +40,7 @@ function stretch(myRectangle, canvas, context, startTime) {
   });
 }
 
+//  Possibly useful
 function animate(myRectangle, canvas, context, startTime) {
   // update
   var time = (new Date()).getTime() - startTime;
