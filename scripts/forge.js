@@ -40,6 +40,30 @@ function stretch(myRectangle, canvas, context, startTime) {
   });
 }
 
+//  Area based stretch
+function stretch2(myRectangle, canvas, context, startTime) {
+  // update
+  var time = (new Date()).getTime() - startTime;
+  var linearSpeed = 10;
+  // pixels / second
+  var newX = linearSpeed * time / 1000;
+  var rectArea = myRectangle.width * myRectangle.height;
+
+  if ((newX < canvas.width - myRectangle.width - myRectangle.borderWidth / 2) && (time < 500)) {
+    myRectangle.width += newX;
+    myRectangle.height = rectArea / myRectangle.width;
+  }
+  // clear
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawRectangle(myRectangle, context);
+
+  // request new frame
+  requestAnimFrame(function() {
+    stretch2(myRectangle, canvas, context, startTime);
+  });
+}
+
 //  Possibly useful
 function animate(myRectangle, canvas, context, startTime) {
   // update
@@ -81,5 +105,5 @@ drawRectangle(myRectangle, context);
 // Draw out on click
 document.getElementById("myCanvas").onclick = function() {
   var startTime = (new Date()).getTime();
-  stretch(myRectangle, canvas, context, startTime);
+  stretch2(myRectangle, canvas, context, startTime);
 }
