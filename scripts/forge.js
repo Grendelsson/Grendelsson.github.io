@@ -113,7 +113,7 @@ drawRectangle(myRectangle, context);
 document.getElementById("myCanvas").onclick = function(e) {
   // debugging alert
 // alert("clickX: " + e.pageX + " clickY: "  + e.pageY + "\nx: " +  myRectangle.x + " width: " + myRectangle.width + "\ny: " +  myRectangle.y + " height: " + myRectangle.height + "\ndx: " + (myRectangle.x+myRectangle.width-e.pageX) + "\ndy: " + (myRectangle.y+myRectangle.height-e.pageY));
-if(intersects(myRectangle.x, myRectangle.y, e.x, e.y, myRectangle.width, myRectangle.height, myRectangle.borderWidth)){
+if(intersects(myRectangle.x, myRectangle.y, e.x, e.y, myRectangle.width, myRectangle.height, canvas.getBoundingClientRect().left, canvas.getBoundingClientRect().top, myRectangle.borderWidth)){
   var startTime = (new Date()).getTime();
   stretch2(myRectangle, canvas, context, startTime);
   }
