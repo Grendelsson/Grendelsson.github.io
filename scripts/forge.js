@@ -33,7 +33,7 @@ function stretch(myRectangle, canvas, context, startTime) {
   // pixels / second
   var newX = linearSpeed * time / 1000;
 
-  if ((newX < canvas.width - myRectangle.width - myRectangle.borderWidth / 2) && (time < 500)) {
+  if ((newX < canvas.width - myRectangle.width - 50 - (myRectangle.borderWidth / 2)) && (time < 500)) {
     myRectangle.width += newX;
   }
   // clear
