@@ -7,11 +7,11 @@ window.requestAnimFrame = (function(callback) {
     };
 })();
 
-// needs work
+// Inside rectangle
 function intersects(x, y, clickX, clickY, width, height) {
-    var dx = x-clickX;
-    var dy = y-clickY;
-    return dx <= width && dy <= height;
+    var dx = x+width-clickX;
+    var dy = y+height-clickY;
+    return dx <= width && (dx >= 0 && (dy <= height && dy >= 0));
 }
 
 function drawRectangle(myRectangle, context) {
@@ -100,7 +100,7 @@ var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
 
 var myRectangle = {
-  x: 0,
+  x: 50,
   y: 75,
   width: 100,
   height: 50,
