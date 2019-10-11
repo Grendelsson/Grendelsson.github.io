@@ -10,6 +10,10 @@ body {
 tr {
 	margin: 0 1em 0 0;
 }
+#main a:link, a:visited, a:active {
+	color: black;
+	text-decoration: underline;
+}
 #menu a:link, a:visited, a:active {
 	color: #fff;
 	text-decoration: none;
