@@ -48,7 +48,7 @@
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
     //document.getElementById('query-output').value = formattedJson;
-    document.getElementById('query-output').value = "Pageviews since launch: " + JSON.parse(response.result).values;
+    document.getElementById('query-output').value = "Pageviews since launch: " + JSON.parse(response.result).reports.totals.values;
   }
 </script>
 
