@@ -30,7 +30,7 @@
   // Query the API and print the results to the page.
   function queryReports() {
     gapi.client.request({
-      path: '/v4/reports:batchGet',
+      path: '/v4/userActivity:search',
       root: 'https://analyticsreporting.googleapis.com/',
       method: 'POST',
       body: {
@@ -53,8 +53,8 @@
 
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
-    //document.getElementById('query-output').value = formattedJson;
-    document.getElementById('query-output').value = "Pageviews since launch: " + JSON.parse(response.result).reports.totals.values;
+    document.getElementById('query-output').value = formattedJson;
+    //document.getElementById('query-output').value = "Pageviews since launch: " + JSON.parse(response.result).reports.totals.values;
   }
 </script>
 
