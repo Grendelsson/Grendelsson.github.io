@@ -50,7 +50,7 @@
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
     //document.getElementById('query-output').value = formattedJson;
-    document.getElementById('query-output').value = "Pageviews since launch: " + response.result.sessions;
+    document.getElementById('query-output').value = "Pageviews since launch: " + JSON.stringify(response.result.sessions[0]);
   }
 </script>
 
