@@ -50,7 +50,18 @@
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
     //document.getElementById('query-output').value = formattedJson;
-    document.getElementById('query-output').value = "Pageviews since launch: " + JSON.stringify(response.result.sessions[0]);
+    //document.getElementById('query-output').value = "First session for user: " + JSON.stringify(response.result.sessions[0]);
+ //////////////////
+    for(var i = 0; i < response.result.length; i++){
+      var tr = document.createElement('tr');
+        for(var j = 0; j < response.result[i].length; j++){
+          var td = document.createElement('td');
+          td.appendChild(document.createTextNode(response.result[i][j]));
+          tr.appendChild(td);
+        }
+        document.getElementByID("query-output").appendChild(tr);
+      }
+    ///////////////////////
   }
 </script>
 
