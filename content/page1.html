@@ -36,18 +36,15 @@
       body: {
         reportRequests: [
           {
-            viewId: VIEW_ID,
-            dateRanges: [
-              {
-                startDate: '2019-01-01',
-                endDate: 'today'
-              }
-            ],
-            metrics: [
-              {
-                expression: 'ga:pageviews'
-              }
-            ]
+            "viewId": VIEW_ID,
+            "user": {
+              "type": "CLIENT_ID",
+              "userId": "853804226.1571845187"
+            },
+            "dateRange": {
+              "startDate": "2019-01-01",
+              "endDate": "2019-10-31"
+            }
           }
         ]
       }
