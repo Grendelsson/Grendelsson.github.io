@@ -53,6 +53,7 @@
     //document.getElementById('query-output').value = "First session for user: " + JSON.stringify(response.result.sessions[0]);
  //////////////////
     for(var i = 0; i < response.length; i++){
+      console.log("in print function");
       var tr = document.createElement('tr');
         for(var j = 0; j < response[i].length; j++){
           var td = document.createElement('td');
