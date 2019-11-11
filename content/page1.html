@@ -48,21 +48,20 @@
   }
 
   function displayResults(response) {
-    var resJSON = response;
     var formattedJson = JSON.stringify(response.result, null, 2);
     //document.getElementById('query-output').value = formattedJson;
-    //document.getElementById('query-output').value = "First session for user: " + JSON.stringify(response.result.sessions[0]);
+    document.getElementById('query-output').value = "First session for user: " + JSON.stringify(response.result.sessions[0].sessionID +"\n"+response.result.sessions[0].activities);
  //////////////////
-    for(var i = 0; i < response.sessions.length; i++){
-      console.log("in print function");
-      var tr = document.createElement('tr');
-        for(var j = 0; j < response.sessions[i].length; j++){
-          var td = document.createElement('td');
-          td.appendChild(document.createTextNode(response.sessions[i].activities[j]));
-          tr.appendChild(td);
-        }
-        document.getElementById("query-output").appendChild(tr);
-      }
+//    for(var i = 0; i < response.sessions.length; i++){
+//      console.log("in print function");
+//      var tr = document.createElement('tr');
+//        for(var j = 0; j < response.sessions[i].length; j++){
+//          var td = document.createElement('td');
+//          td.appendChild(document.createTextNode(response.sessions[i].activities[j]));
+//          tr.appendChild(td);
+//        }
+//        document.getElementById("query-output").appendChild(tr);
+//      }
     ///////////////////////    
   }
 </script>
