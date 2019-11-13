@@ -50,12 +50,12 @@
   }
 
   function displayResults(response) {
-    var formattedJson = JSON.stringify(response.result, null, 2);
+    //var formattedJson = JSON.stringify(response.result, null, 2);
     //document.getElementById('query-output').value = formattedJson;
     
     var tr = document.createElement('tr');
     var th = document.createElement('th');
-    th.innerText = JSON.stringify(response.result.sessions[0].sessionId);
+    th.innerText = JSON.parse(response.result.sessions[0].sessionId);
     tr.appendChild(th);
     document.getElementById('query-output').appendChild(tr);
     
@@ -64,7 +64,7 @@
       var activityElement = ['activityTime','landingPagePath','activityType']
       for (var i=0;i<3;i++){
         var td = document.createElement('td');
-        td.innerText =  JSON.stringify(item[activityElement[i]]);
+        td.innerText =  JSON.parse(item[activityElement[i]]);
         tr.appendChild(td);
       }
       document.getElementById('query-output').appendChild(tr);
