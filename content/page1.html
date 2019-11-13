@@ -62,7 +62,7 @@
     for (var item of response.result.sessions[0].activities){
       var tr = document.createElement('tr');
       var activityElement = ['activityTime','landingPagePath','activityType','event','pageview'];
-      alert(Object.keys(item[0]));
+      console.log(Object.keys(item[0]).join(","));
       for (var i=0;i<item.length;i++){
         var td = document.createElement('td');
         if (activityElement.includes(Object.keys(item[i]))){
