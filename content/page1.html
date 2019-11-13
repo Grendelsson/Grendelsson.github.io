@@ -59,18 +59,15 @@
     tr.appendChild(th);
     document.getElementById('query-output').appendChild(tr);
     
+    var activityElement = ["activityTime", "landingPagePath", "activityType", "event", "pageview"];
     for (var item of response.result.sessions[0].activities){
       var tr = document.createElement('tr');
-      var activityElement = ["activityTime", "landingPagePath", "activityType", "event", "pageview"];
-      //console.log(item.keys);
-      for (var act of item){
-        for (var actKey in Object.keys(act)){
-          console.log(actKey);
-          var td = document.createElement('td');
-          if (activityElement.includes(actKey)){
-            td.innerText =  JSON.stringify(item[actKey]);
-            tr.appendChild(td);
-          }
+      for (var actKey in Object.keys(item)){
+        console.log(actKey);
+        var td = document.createElement('td');
+        if (activityElement.includes(actKey)){
+          td.innerText =  JSON.stringify(item[actKey]);
+          tr.appendChild(td);
         }
       }
       document.getElementById('query-output').appendChild(tr);
