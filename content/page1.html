@@ -62,10 +62,12 @@
     for (var item of response.result.sessions[0].activities){
       var tr = document.createElement('tr');
       var activityElement = ['activityTime','landingPagePath','activityType']
-      for (var i=0;i<3;i++){
+      for (var i=0;i<item.length;i++){
         var td = document.createElement('td');
-        td.innerText =  JSON.parse(item[activityElement[i]]);
-        tr.appendChild(td);
+        if (activityElement.includes(Object.keys(item[i]))){
+          td.innerText =  JSON.stringify(item[i]);
+          tr.appendChild(td);
+        }
       }
       document.getElementById('query-output').appendChild(tr);
     }
