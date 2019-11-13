@@ -50,6 +50,9 @@
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
     //document.getElementById('query-output').value = formattedJson;
+    var th = document.createElement('th');
+    th.innerText = JSON.stringify(response.result.sessions[0].sessionId);
+    document.getElementById('query-output').appendChild(th);
     
     for (var item of response.result.sessions[0].activities){
       var tr = document.createElement('tr');
