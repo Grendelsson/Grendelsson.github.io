@@ -61,8 +61,11 @@
     
     for (var item of response.result.sessions[0].activities){
       var tr = document.createElement('tr');
-      var td = document.createElement('td');
-      td.innerText =  JSON.stringify(item);
+      var activityElement = ['activityTime','landingPagePath','activityType']
+      for (var i=0;i<3;i++){
+        var td = document.createElement('td');
+        td.innerText =  JSON.stringify(item[activityElement[i]]);
+      }
       tr.appendChild(td);
       document.getElementById('query-output').appendChild(tr);
     }
