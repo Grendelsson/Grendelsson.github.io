@@ -65,7 +65,7 @@
       console.log(Object.keys(item));
       for (var i=0;i<item.length;i++){
         var td = document.createElement('td');
-        if (activityElement.includes(Object.keys(JSON.parse(item[i])))){
+        if (activityElement.includes(Object.keys(item)[i])){
           td.innerText =  JSON.stringify(item[i]);
           tr.appendChild(td);
         }
