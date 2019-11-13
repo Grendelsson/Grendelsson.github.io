@@ -61,7 +61,7 @@
     
     for (var item of response.result.sessions[0].activities){
       var tr = document.createElement('tr');
-      var activityElement = ['activityTime','landingPagePath','activityType','event','pageview'];
+      var activityElement = ["activityTime","landingPagePath","activityType","event","pageview"];
       console.log(Object.keys(item));
       for (var i=0;i<item.length;i++){
         var td = document.createElement('td');
