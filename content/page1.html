@@ -72,7 +72,7 @@
         if (activityElement.includes(actKey)){
           var data = item[actKey];
           for (var dataKey of Object.keys(data)){
-            td.innerText +=  JSON.stringify(data[dataKey]);
+            td.innerText +=  JSON.stringify(data[dataKey])+"\n";
           }
           tr.appendChild(td);
         }
