@@ -61,7 +61,10 @@
     //list of keys which should print value
     var activityElement = ["activityTime", "landingPagePath", "activityType", "event", "pageview"];
     //loop through array of objects
+    var mainArr = [];
     for (var item of response.result.sessions[0].activities){
+      var subArr = [];
+      subArr.push(response.result.sessions[0].sessionId);
       var tr = document.createElement('tr');
       //loop through keys in selected activity object
       for (var actKey of Object.keys(item)){
@@ -69,12 +72,14 @@
         var td = document.createElement('td');
         //check key is in list of keys to print value
         if (activityElement.includes(actKey)){
+          subArr.push(JSON.stringify(data,null,2).replace(/\"/g,''));
           var data = item[actKey];
           td.innerText +=  JSON.stringify(data,null,2).replace(/\"/g,'');
           tr.appendChild(td);
         }
       }
       document.getElementById('query-output').appendChild(tr);
+      mainArr.pus(subArr);
     }
   }
 </script>
