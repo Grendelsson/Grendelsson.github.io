@@ -71,7 +71,7 @@
         //check key is in list of keys to print value
         if (activityElement.includes(actKey)){
           var data = item[actKey];
-          for (var dataKey of data){
+          for (var dataKey of Object.keys(data)){
             td.innerText +=  JSON.stringify(data[dataKey]);
           }
           tr.appendChild(td);
