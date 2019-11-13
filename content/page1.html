@@ -50,10 +50,15 @@
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
     //document.getElementById('query-output').value = formattedJson;
-    document.getElementById('query-output').innerText = "First session for user: " 
-      + JSON.stringify(response.result.sessions[0].sessionID) 
-      + "\n"
-      + JSON.stringify(response.result.sessions[0].activities);
+    
+    for (var item of response.result.sessions[0].activities){
+      document.getElementById('query-output').innerText += JSON.stringify(item)+"\n\n";
+    }
+    
+    //document.getElementById('query-output').innerText = "First session for user: " 
+    //  + JSON.stringify(response.result.sessions[0].sessionID) 
+    //  + "\n"
+    //  + JSON.stringify(response.result.sessions[0].activities);
  //////////////////
 //    for(var i = 0; i < response.sessions.length; i++){
 //      console.log("in print function");
