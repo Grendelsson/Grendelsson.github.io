@@ -63,10 +63,10 @@
       var tr = document.createElement('tr');
       var activityElement = ["activityTime","landingPagePath","activityType","event","pageview"];
       console.log(Object.keys(item));
-      for (var i=0;i<item.length;i++){
+      for (var actKey in Object.keys(item)){
         var td = document.createElement('td');
-        if (activityElement.includes(Object.keys(item)[i])){
-          td.innerText =  JSON.stringify(item[i]);
+        if (activityElement.includes(actKey){
+          td.innerText =  JSON.stringify(item[actKey]);
           tr.appendChild(td);
         }
       }
