@@ -121,3 +121,6 @@ canvas {
 	background-color: white;
 	border: solid black;
 }
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
