@@ -64,7 +64,7 @@
       var activityElement = ['activityTime','landingPagePath','activityType','event','pageview']
       for (var i=0;i<item.length;i++){
         var td = document.createElement('td');
-        console.log(Object.keys(item[i]));
+        alert(Object.keys(item[i]));
         if (activityElement.includes(Object.keys(item[i]))){
           td.innerText =  JSON.stringify(item[i]);
           tr.appendChild(td);
