@@ -71,7 +71,7 @@
         //check key is in list of keys to print value
         if (activityElement.includes(actKey)){
           var data = item[actKey];
-          td.innerText +=  JSON.stringify(data,null,2).replace('"','');
+          td.innerText +=  JSON.stringify(data,null,2).replace(/\"/,'');
           tr.appendChild(td);
         }
       }
