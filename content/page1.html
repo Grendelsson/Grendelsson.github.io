@@ -70,7 +70,10 @@
         var td = document.createElement('td');
         //check key is in list of keys to print value
         if (activityElement.includes(actKey)){
-          td.innerText =  JSON.stringify(item[actKey]);
+          var data = item[actKey];
+          for (var dataKey of data){
+            td.innerText +=  JSON.stringify(data[dataKey]);
+          }
           tr.appendChild(td);
         }
       }
