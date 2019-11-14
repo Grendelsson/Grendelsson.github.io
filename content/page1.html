@@ -81,6 +81,12 @@
       document.getElementById('query-output').appendChild(tr);
       mainArr.push(subArr);
     }
+    var dlURI = encodeURI(mainArr.join(','));
+    var link = document.createElement('a');
+    link.setAttribute("download", "my_data.csv");
+    link.setAttribute("href",dlURI);
+    link.innerText = "Export data";
+    document.body.prepend(link);
   }
 </script>
 
