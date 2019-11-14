@@ -72,8 +72,8 @@
         var td = document.createElement('td');
         //check key is in list of keys to print value
         if (activityElement.includes(actKey)){
-          subArr.push(JSON.stringify(data,null,2).replace(/\"/g,''));
           var data = item[actKey];
+          subArr.push(JSON.stringify(data,null,2).replace(/\"/g,''));
           td.innerText +=  JSON.stringify(data,null,2).replace(/\"/g,'');
           tr.appendChild(td);
         }
