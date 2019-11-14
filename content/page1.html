@@ -81,7 +81,7 @@
       document.getElementById('query-output').appendChild(tr);
       mainArr.push(subArr);
     }
-    var dlURI = encodeURI(mainArr.join(','));
+    var dlURI = encodeURI('data:text/csv;charset=utf-8,'+mainArr.join(','));
     var link = document.createElement('a');
     link.setAttribute("download", "my_data.csv");
     link.setAttribute("href",dlURI);
