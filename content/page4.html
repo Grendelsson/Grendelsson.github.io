@@ -35,23 +35,23 @@
       root: 'https://analyticsreporting.googleapis.com/',
       method: 'POST',
       body: {
-              reportRequests: [
-                {
-                  viewId: VIEW_ID,
-                  dateRanges: [
-                    {
-                      startDate: '7daysAgo',
-                      endDate: 'today'
-                    }
-                  ],
-                  metrics: [
-                    {
-                      expression: 'ga:clientId'
-                    }
-                  ]
-                }
-              ]
-            }
+        reportRequests: [
+          {
+            viewId: VIEW_ID,
+            dateRanges: [
+              {
+                startDate: '7daysAgo',
+                endDate: 'today'
+              }
+            ],
+            metrics: [
+              {
+                expression: 'ga:clientId'
+              }
+            ]
+          }
+        ]
+      }
     }).then(displayResults, console.error.bind(console));
   }
 
