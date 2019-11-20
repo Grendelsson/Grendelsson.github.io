@@ -31,7 +31,7 @@
   // Query the API and print the results to the page.
   function queryReports() {
     gapi.client.request({
-      path: '/v4/clientId:hashClientId',
+      path: '/v4/reports:batchGet',
       root: 'https://analyticsreporting.googleapis.com/',
       method: 'POST',
       body: {
@@ -46,7 +46,7 @@
             ],
             metrics: [
               {
-                expression: 'ga:clientId'
+                expression: 'ga:hashClientId'
               }
             ]
           }
