@@ -63,7 +63,7 @@ o<html><head>
   function displayResults(response) {
     var subData = response.result.reports[0].data.rows;
     for (var cid of subData){
-      document.getElementById('query-output').innerText += cid.dimensions[0];
+      document.getElementById('query-output').innerText += cid.dimensions[0]+"\n";
     }
   }
 </script>
