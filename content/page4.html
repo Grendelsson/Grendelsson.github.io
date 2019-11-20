@@ -61,7 +61,7 @@ o<html><head>
   }
 
   function displayResults(response) {
-    var formattedJson = JSON.stringify(response.result.reports[0].data.rows, null, 2);
+    var formattedJson = response.result.reports[0].data.rows;
     document.getElementById('query-output').innerText = formattedJson;
   }
 </script>
