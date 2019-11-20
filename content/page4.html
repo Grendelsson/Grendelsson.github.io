@@ -22,7 +22,7 @@
   
 <p>API connection to attempt to extract ClientIDs for use in user explorer extraction.</p>
 <!-- The API response will be printed here. -->
-<table id="query-output"></table>
+<div id="query-output"></div>
 
 <script>
   // Replace with your view ID.
@@ -58,8 +58,6 @@
   function displayResults(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
     document.getElementById('query-output').value = formattedJson;
-    
-    }
   }
 </script>
 
