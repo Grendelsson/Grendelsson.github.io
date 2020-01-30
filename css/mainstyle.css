@@ -40,10 +40,8 @@ a:hover {
 	z-index: 9;
 }
 #footer {
-	position: fixed;
 	clear: both;
 	padding: 1em 10em 1em 10em;
-	bottom: 0;
 	color: white;
 	z-index: 9;
 }
