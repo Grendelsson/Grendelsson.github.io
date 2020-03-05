@@ -11,7 +11,7 @@
 <script type='text/javascript'>
   function testFunc(){
     console.log('test');
-    window.ga('send','event','test','anon','test','1');
+    ga.getAll()[0].send('event','test','anon','test','1');
   }
 </script>
 </head>
