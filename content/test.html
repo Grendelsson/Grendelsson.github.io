@@ -8,11 +8,17 @@
   gtag('js', new Date());
   gtag('config', 'UA-148446379-2', {'anonymize_ip':true});
 </script>
+<script type='text/javascript'>
+  function testFunc(){
+    console.log('test');
+    ga('send','event','test','anon','test');
+  }
+</script>
 </head>
 <body>
 <div>
 Testing anonymizeIp
-  <p onclick="function(){console.log('test');ga('send','event','test','anon','test');}">Click me to test</p>
+  <p onclick="">Click me to test</p>testFunc
 </div>
 </body>
 </html>
