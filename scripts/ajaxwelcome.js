@@ -8,7 +8,7 @@ function welcomeNote(){
           cid = i.exp_cid);
         }
       }
-      document.getElementById("inputTooltip").innerHTML = "Hi there " + cid//getElementById("nameinput").value;
+      document.getElementById("inputTooltip").innerHTML = "Hi there " + cid;//getElementById("nameinput").value;
       }
      };
      xhttp.open("GET", "", true);
