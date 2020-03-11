@@ -5,7 +5,8 @@ function welcomeNote(){
       var cid = "";
       for(var i of dataLayer){
         if (i.exp_cid){
-          cid = i.exp_cid);
+          cid = i.exp_cid != null);
+          console.log(cid);
         }
       }
       document.getElementById("inputTooltip").innerHTML = "Hi there " + cid;//getElementById("nameinput").value;
