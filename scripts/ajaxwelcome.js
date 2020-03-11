@@ -6,10 +6,10 @@ function welcomeNote(){
       for(var i of dataLayer){
         if (i.exp_cid != null){
           cid = i.exp_cid;
-          console.log(cid);
+          //console.log(cid);
         }
       }
-      document.getElementById("inputTooltip").innerHTML = "Hi there " + cid;//getElementById("nameinput").value;
+      document.getElementById("inputTooltip").innerHTML = "CID: " + cid;//getElementById("nameinput").value;
       }
      };
      xhttp.open("GET", "", true);
