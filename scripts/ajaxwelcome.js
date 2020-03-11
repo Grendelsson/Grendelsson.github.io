@@ -4,8 +4,8 @@ function welcomeNote(){
     if (this.readyState == 4 && this.status == 200){
       var cid = "";
       for(var i of dataLayer){
-        if (i.exp_cid){
-          cid = i.exp_cid != null);
+        if (i.exp_cid != null){
+          cid = i.exp_cid;
           console.log(cid);
         }
       }
