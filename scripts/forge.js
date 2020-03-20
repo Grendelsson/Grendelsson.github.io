@@ -163,7 +163,7 @@ svg.selectAll("text")
           var translate = [barWidth * i + barWidth/2, 0];
           return "translate("+ translate +")";  
     })
-    .attr("y",-10)
+    .attr("y",10)
     .text(function(d,i){
          return labels[i];
     });
