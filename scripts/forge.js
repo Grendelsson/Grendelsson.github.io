@@ -151,7 +151,6 @@ var barChart = svg.selectAll("rect")
          var translate = [barWidth * i + barPadding/2, 0];  
          return "translate("+ translate +")";  
     })
-
     .append("text")
     .text(function(d,i){
          return labels[i];
