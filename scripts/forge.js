@@ -147,7 +147,7 @@ var barChart = svg.selectAll("rect")
     })  
     .attr("width", barWidth - barPadding)  
     .attr("transform", function (d, i) {  
-         var translate = [barWidth * i, 0];  
+         var translate = [barWidth * i + barPadding/2, 0];  
          return "translate("+ translate +")";  
     });
 //
