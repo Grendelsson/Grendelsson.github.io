@@ -152,10 +152,12 @@ var barChart = svg.selectAll("rect")
          return "translate("+ translate +")";  
     })
     .append("text")
-    .text(function(d,i){
-         return labels[i];
-    })
     .attr("font-family", "sans-serif")
     .attr("font-size", "20px")
-    .attr("fill", "red");
+    .attr("fill", "red")
+    .attr("x",100)
+    .attr("y",100
+    .text(function(d,i){
+         return labels[i];
+    });
 //
