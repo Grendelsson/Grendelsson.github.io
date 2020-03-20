@@ -151,7 +151,7 @@ var barChart = svg.selectAll("rect")
          var translate = [barWidth * i + barPadding/2, 0];  
          return "translate("+ translate +")";  
     });
-
+//add labels
 svg.selectAll("text")
     .data(dataset)
     .enter()
@@ -159,7 +159,10 @@ svg.selectAll("text")
     .attr("font-family", "sans-serif")
     .attr("font-size", "20px")
     .attr("fill", "red")
-    .attr("x",100)
+    .attr("x",function(d,i){
+          var translate = [barWidth * i + barPadding/2, 0];
+          return "translate("+ translate +")";  
+    })
     .attr("y",100)
     .text(function(d,i){
          return labels[i];
