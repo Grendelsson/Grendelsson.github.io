@@ -160,10 +160,10 @@ svg.selectAll("text")
     .attr("font-size", "20px")
     .attr("fill", "red")
     .attr("transform",function(d,i){
-          var translate = [barWidth * i + barPadding/2, 0];
-          return "translate("+ translate +",100)";  
+          var translate = [barWidth * i + barWidth/2, 0];
+          return "translate("+ translate +")";  
     })
-    //.attr("y",100)
+    //.attr("y",-10)
     .text(function(d,i){
          return labels[i];
     });
