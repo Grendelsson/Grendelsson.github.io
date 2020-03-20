@@ -159,7 +159,7 @@ svg.selectAll("text")
     .attr("font-family", "sans-serif")
     .attr("font-size", "20px")
     .attr("fill", "red")
-    .attr("x",function(d,i){
+    .attr("transform",function(d,i){
           var translate = [barWidth * i + barPadding/2, 0];
           return "translate("+ translate +")";  
     })
