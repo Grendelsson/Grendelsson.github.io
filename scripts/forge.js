@@ -161,9 +161,9 @@ svg.selectAll("text")
     .attr("fill", "red")
     .attr("transform",function(d,i){
           var translate = [barWidth * i + barPadding/2, 0];
-          return "translate("+ translate +")";  
+          return "translate("+ translate +",100)";  
     })
-    .attr("y",100)
+    //.attr("y",100)
     .text(function(d,i){
          return labels[i];
     });
