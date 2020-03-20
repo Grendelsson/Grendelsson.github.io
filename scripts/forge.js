@@ -153,5 +153,8 @@ var barChart = svg.selectAll("rect")
     })
     .text(function(d,i){
          return labels[i];
-    });
+    })
+35  .attr("font-family", "sans-serif")
+36  .attr("font-size", "20px")
+37  .attr("fill", "red");
 //
