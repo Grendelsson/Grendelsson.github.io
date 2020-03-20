@@ -131,6 +131,7 @@ var svg = d3.select('svg')
 
 //build chart
 var dataset = [80, 100, 56, 120, 180, 30, 40, 120, 160];
+var labels = ["a","b","c","d","e","f","g","h","i"]
 
 var barPadding = 5;  
 var barWidth = (svgWidth / dataset.length);
@@ -149,5 +150,6 @@ var barChart = svg.selectAll("rect")
     .attr("transform", function (d, i) {  
          var translate = [barWidth * i + barPadding/2, 0];  
          return "translate("+ translate +")";  
-    });
+    })
+    .text(labels[i]);
 //
