@@ -150,7 +150,10 @@ var barChart = svg.selectAll("rect")
     .attr("transform", function (d, i) {  
          var translate = [barWidth * i + barPadding/2, 0];  
          return "translate("+ translate +")";  
-    })
+    });
+
+svg.selectAll("text")
+    .data(dataset)
     .enter()
     .append("text")
     .attr("font-family", "sans-serif")
