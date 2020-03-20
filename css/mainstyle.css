@@ -122,3 +122,6 @@ canvas {
 tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
+.bar-chart {  
+    background-color: #C7D9D9;  
+}
