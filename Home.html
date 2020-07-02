@@ -15,6 +15,9 @@ if (document.cookie.indexOf(disableStr + '=true') > -1) {
 // Opt-out function
 function gaOptout() {
   document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+  if (document.cookie.match(/_testCid/gi)){
+    document.cookie = "_testCid" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
   window[disableStr] = true;
 }
 </script>
