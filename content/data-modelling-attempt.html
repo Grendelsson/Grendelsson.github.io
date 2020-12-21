@@ -31,62 +31,40 @@
   // Query the API and print the results to the page.
   function queryReports() {
     gapi.client.request({
-      path: '/v4/userActivity:search',
+      path: '/v4/reports:batchGet',
       root: 'https://analyticsreporting.googleapis.com/',
       method: 'POST',
       body: {
-          "viewId": VIEW_ID,
-          "user": {
-            "type": "CLIENT_ID",
-            "userId": "853804226.1571845187"
-          },
-          "dateRange": {
-            "startDate": "2019-01-01",
-            "endDate": "2019-10-31"
+        reportRequests: [
+          {
+            viewId: VIEW_ID,
+            dateRanges: [
+              {
+                startDate: '30daysAgo',
+                endDate: 'today'
+              }
+            ],
+            dimensions: [
+              {
+                name: 'ga:clientId'
+              }
+            ],
+            metrics: [
+              {
+                expression: 'ga:sessions'
+              }
+            ]
           }
-        }
+        ]
+      }
     }).then(displayResults, console.error.bind(console));
   }
 
   function displayResults(response) {
-    //var formattedJson = JSON.stringify(response.result, null, 2);
-    //document.getElementById('query-output').value = formattedJson;
-    
-    var tr = document.createElement('tr');
-    var th = document.createElement('th');
-    //get sessionId as title
-    th.innerText = JSON.parse(response.result.sessions[0].sessionId);
-    tr.appendChild(th);
-    document.getElementById('query-output').appendChild(tr);
-    //list of keys which should print value
-    var activityElement = ["activityTime", "landingPagePath", "activityType", "event", "pageview"];
-    //loop through array of objects
-    var mainArr = [];
-    for (var item of response.result.sessions[0].activities){
-      var subArr = [];
-      subArr.push(response.result.sessions[0].sessionId);
-      var tr = document.createElement('tr');
-      //loop through keys in selected activity object
-      for (var actKey of Object.keys(item)){
-        //console.log(actKey);
-        var td = document.createElement('td');
-        //check key is in list of keys to print value
-        if (activityElement.includes(actKey)){
-          var data = item[actKey];
-          subArr.push(JSON.stringify(data,null,2).replace(/\"/g,''));
-          td.innerText +=  JSON.stringify(data,null,2).replace(/\"/g,'');
-          tr.appendChild(td);
-        }
-      }
-      document.getElementById('query-output').appendChild(tr);
-      mainArr.push(subArr);
+    var subData = response.result.reports[0].data.rows;
+    for (var cid of subData){
+      document.getElementById('query-output').innerText += cid.dimensions[0]+"\n";
     }
-    var dlURI = encodeURI('data:text/csv;charset=utf-8,'+mainArr.join(','));
-    var link = document.createElement('a');
-    link.setAttribute("download", "my_data.csv");
-    link.setAttribute("href",dlURI);
-    link.innerText = "Export data";
-    document.body.prepend(link);
   }
 </script>
 
