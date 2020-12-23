@@ -24,48 +24,7 @@
 <!-- The API response will be printed here. -->
 <table id="query-output"></table>
 
-<script>
-  // Replace with your view ID.
-  var VIEW_ID = '92320289';
-
-  // Query the API and print the results to the page.
-  function queryReports() {
-    gapi.client.request({
-      path: '/v4/reports:batchGet',
-      root: 'https://analyticsreporting.googleapis.com/',
-      method: 'POST',
-      body: {
-        reportRequests: [
-          {
-            viewId: VIEW_ID,
-            dateRanges: [
-              {
-                startDate: '30daysAgo',
-                endDate: 'today'
-              }
-            ],
-            dimensions: [
-              {
-                name: 'ga:date'
-              }
-            ],
-            metrics: [
-              {
-                expression: 'ga:sessions'
-              }
-            ]
-          }
-        ]
-      }
-    }).then(displayResults, console.error.bind(console));
-  }
-
-  function displayResults(response) {
-    var subData = response.result.reports[0].data.rows;
-    for (var cid of subData){
-      document.getElementById('query-output').innerText += cid.dimensions[0]+"\n";
-    }
-  }
+<script src="../d3_sankey.js">
 </script>
 
 <!-- Load the JavaScript API client and Sign-in library. -->
