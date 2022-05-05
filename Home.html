@@ -2,6 +2,20 @@
 <html>
 <head>
 <meta name="robots" content="noindex">
+<script>
+  // Include the following lines to define the gtag() function when
+  // calling this code prior to your gtag.js or Tag Manager snippet
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Call the default command before gtag.js or Tag Manager runs to
+  // adjust how the tags operate when they run. Modify the defaults
+  // per your business requirements and prior consent granted/denied, e.g.:
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
