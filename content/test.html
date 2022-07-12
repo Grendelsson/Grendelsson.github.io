@@ -1,11 +1,16 @@
 <html>
 <head>
 <meta name="robots" content="noindex">
-  <script></script>
+  <script>
+    function postUp(){
+      parent.postMessage(this.innerText,'*')
+    }
+  </script>
 </head>
 <body>
 <div>
 Testing postMessage from iframe
 </div>
+<button type="button" onclick="postUp()">Test Button</button>
 </body>
 </html>
