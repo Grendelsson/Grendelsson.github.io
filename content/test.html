@@ -1,25 +1,11 @@
 <html>
 <head>
 <meta name="robots" content="noindex">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148446379-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-148446379-2', {'anonymize_ip':true});
-</script>
-<script type='text/javascript'>
-  function testFunc(){
-    console.log('test');
-    gtag('event','test',{'event_category':'anon','event_label':'test'});
-  }
-</script>
+  <script></script>
 </head>
 <body>
 <div>
-Testing anonymizeIp
-  <p onclick="testFunc()">Click me to test</p>
+Testing postMessage from iframe
 </div>
 </body>
 </html>
