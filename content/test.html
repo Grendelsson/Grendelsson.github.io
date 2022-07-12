@@ -2,9 +2,9 @@
 <head>
 <meta name="robots" content="noindex">
   <script>
-    function postUp(){
-      console.log(this.value);
-      parent.postMessage(this.value,'*');
+    function postUp(val){
+      console.log(val);
+      parent.postMessage(val,'*');
     }
   </script>
 </head>
@@ -12,6 +12,6 @@
 <div>
 Testing postMessage from iframe
 </div>
-<button type="button" onclick="postUp()" value="Test button data">Test Button</button>
+<button type="button" onclick="postUp(this.value)" value="Test button data">Test Button</button>
 </body>
 </html>
