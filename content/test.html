@@ -3,7 +3,8 @@
 <meta name="robots" content="noindex">
   <script>
     function postUp(){
-      parent.postMessage(this.innerText,'*')
+      var passStr = this.value || "Empty";
+      parent.postMessage(passStr,'*')
     }
   </script>
 </head>
