@@ -5,7 +5,7 @@
   <script>
     function postUp(val){
       console.log('iframe function run');
-      window.parent.postMessage(val,'*');
+      window.parent.parent.postMessage(val,'*');
     }
   </script>
 </head>
