@@ -23,6 +23,7 @@
                         valid: true,
                         value: document.getElementById('userInput').value
                     }
+                    JFCustomWidget.sendData({value: "testing-api"});
                     // send value to JotForm
                     JFCustomWidget.sendSubmit(msg);
                 });
