@@ -22,8 +22,9 @@
                         //to be able to use youw widget as required
                         valid: true,
                         value: document.getElementById('userInput').value
-                    }
-                    JFCustomWidget.sendData({value: "testing-api"});
+                    };
+                    // post message to top window (currently set to jotform, would need to update to nice.org for live forms
+                    window.top.postMessage(msg, 'https://nice.jotform.com');
                     // send value to JotForm
                     JFCustomWidget.sendSubmit(msg);
                 });
