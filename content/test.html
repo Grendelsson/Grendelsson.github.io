@@ -13,12 +13,6 @@
   //
   readyCallback = function(){
     console.log('ready');
-    if(typeof(window.top.postMessage) !== 'undefined'){
-      var val = {
-        'dropdowns': 'none'
-      }
-      window.top.postMessage(val,'https://beta.nice.org.uk');
-    }
   }
   JFCustomWidget.subscribe("ready", readyCallback());
   //
@@ -34,6 +28,12 @@
     // debugging
     console.log('submit callback');
     console.log('submit: ',this);
+    if(typeof(window.top.postMessage) !== 'undefined'){
+      var val = {
+        'submit': 'result'
+      }
+      window.top.postMessage(val,'https://beta.nice.org.uk');
+    }
   }
   //
   JFCustomWidget.subscribe("submit", submitCallback());
