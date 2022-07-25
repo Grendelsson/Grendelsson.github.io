@@ -10,9 +10,10 @@
   }
 </script>
 <script>
-  JFCustomWidget.subscribe("ready", function(msg){
+  var readyCallback = function(msg){
     console.log('ready: ',msg);
-  });
+  }
+  JFCustomWidget.subscribe("ready", readyCallback);
   JFCustomWidget.subscribe("submit", function(msg){
     var data = {
       valid: true,
