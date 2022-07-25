@@ -9,6 +9,11 @@
     window.top.postMessage(val,'*');
   }
   // Actual stuff
+  //subscrive to ready
+  JFCustomWidget.subscribe("ready", function(msg){
+      console.log("ready message arrived from JotForm", msg);
+  });
+
   submitCallback = function(){
     var msg = {}
     //this part will be used if your field is required. If your widget is required valid
@@ -27,10 +32,7 @@
     //most probably you will call sendSubmit method
     JFCustomWidget.sendSubmit(msg);
   }
-  JFCustomWidget.subscribe("ready", function(msg){
-    console.log('ready: ', msg);
-    JFCustomWidget.subscribe("submit", submitCallback());
-  });
+  JFCustomWidget.subscribe("submit", submitCallback());
   //
 </script>
 </head>
