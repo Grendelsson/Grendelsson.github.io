@@ -8,14 +8,7 @@
     console.log('using callbacks');
     window.top.postMessage(val,'*');
   }
-</script>
-<script type="text/javascript">
-  //
-  readyCallback = function(){
-    console.log('ready');
-  }
-  JFCustomWidget.subscribe("ready", readyCallback());
-  //
+  // Actual stuff
   submitCallback = function(){
     var result = {}
     //this part will be used if your field is required. If your widget is required valid
@@ -23,8 +16,6 @@
     result.valid = true;
     //this is your field result. You are expected to send value property as string
     result.value = "my precious data";
-    //most probably you will call sendSubmit method
-    JFCustomWidget.sendSubmit(result);
     // debugging
     console.log('submit callback');
     console.log('submit: ',this);
@@ -34,9 +25,14 @@
       }
       window.top.postMessage(val,'https://beta.nice.org.uk');
     }
+    //most probably you will call sendSubmit method
+    JFCustomWidget.sendSubmit(result);
   }
-  //
-  JFCustomWidget.subscribe("submit", submitCallback());
+  readyCallback = function(msg){
+    console.log('ready: ', msg);
+    JFCustomWidget.subscribe("submit", submitCallback());
+  }
+  JFCustomWidget.subscribe("ready", readyCallback(msg));
   //
 </script>
 </head>
