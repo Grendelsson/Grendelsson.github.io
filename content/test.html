@@ -13,30 +13,30 @@
   //
   readyCallback = function(){
     console.log('ready');
-  }
-  //JFCustomWidget.subscribe("ready", readyCallback());
   //
-  submitCallback = function(){
-    var result = {}
-    //this part will be used if your field is required. If your widget is required valid
-    //property will be expected before form can be submitted
-    result.valid = true;
-    //this is your field result. You are expected to send value property as string
-    result.value = document.getElementById('first_5');
-    //most probably you will call sendSubmit method
-    JFCustomWidget.sendSubmit(result);
-    // debugging
-    console.log('submit callback');
-    if(typeof(window.top.postMessage) !== 'undefined'){
-      var val = {
-        'submit': result
+    submitCallback = function(){
+      var result = {}
+      //this part will be used if your field is required. If your widget is required valid
+      //property will be expected before form can be submitted
+      result.valid = true;
+      //this is your field result. You are expected to send value property as string
+      result.value = document.getElementById('first_5');
+      //most probably you will call sendSubmit method
+      JFCustomWidget.sendSubmit(result);
+      // debugging
+      console.log('submit callback');
+      if(typeof(window.top.postMessage) !== 'undefined'){
+        var val = {
+          'submit': result
+        }
+        window.top.postMessage(val,'https://beta.nice.org.uk');
       }
-      window.top.postMessage(val,'https://beta.nice.org.uk');
     }
+    //
+    JFCustomWidget.subscribe("submit", submitCallback());
+    //
   }
-  //
-  JFCustomWidget.subscribe("submit", submitCallback());
-  //
+  JFCustomWidget.subscribe("ready", readyCallback());
 </script>
 </head>
 <body>
