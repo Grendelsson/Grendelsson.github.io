@@ -10,10 +10,8 @@
   }
 </script>
 <script>
-  //
   JFCustomWidget.subscribe("ready", function(msg){
     console.log('ready: ',msg);
-    //
   });
   JFCustomWidget.subscribe("submit", function(msg){
     var data = {
@@ -33,7 +31,6 @@
     //most probably you will call sendSubmit method
     JFCustomWidget.sendSubmit(data);
   });
-  //
 </script>
 </head>
 <body>
