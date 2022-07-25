@@ -9,10 +9,12 @@
     window.top.postMessage(val,'*');
   }
   // Actual stuff
+  var readyCallback = function(){
+    console.log("ready message arrived from JotForm");
+    JFCustomWidget.subscribe("submit", submitCallback());
+  }
   //subscribe to ready
-  JFCustomWidget.subscribe("ready", function(){
-      console.log("ready message arrived from JotForm");
-  });
+  JFCustomWidget.subscribe("ready", readyCallback(msg));
 
   submitCallback = function(){
     var msg = {}
@@ -32,7 +34,6 @@
     //most probably you will call sendSubmit method
     JFCustomWidget.sendSubmit(msg);
   }
-  JFCustomWidget.subscribe("submit", submitCallback());
   //
 </script>
 </head>
