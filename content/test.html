@@ -14,10 +14,10 @@
     console.log('ready: ',msg);
   }
   JFCustomWidget.subscribe("ready", readyCallback);
-  JFCustomWidget.subscribe("submit", function(msg){
-    var data = {
+  JFCustomWidget.subscribe("submit", function(){
+    var msg = {
       valid: true,
-      value: msg
+      value: 'test'
     }
     //this part will be used if your field is required. If your widget is required valid
     //property will be expected before form can be submitted
@@ -25,12 +25,12 @@
     console.log('submit callback');
     if(typeof(window.top.postMessage) !== 'undefined'){
       var val = {
-        'submit': data
+        'submit': msg
       }
       window.top.postMessage(val,'https://beta.nice.org.uk');
     }
     //most probably you will call sendSubmit method
-    JFCustomWidget.sendSubmit(data);
+    JFCustomWidget.sendSubmit(msg);
   });
 </script>
 </head>
@@ -38,6 +38,6 @@
 <div>
 Testing custom widget
 </div>
-<button type="button" onclick="postUp(this.value)" value="Test button data">Test Button</button>
+<button type="button" onclick="postUp(this.value)" value="Test button msg">Test Button</button>
 </body>
 </html>
