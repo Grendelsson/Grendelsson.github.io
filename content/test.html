@@ -16,7 +16,7 @@
   }
   JFCustomWidget.subscribe("ready", readyCallback);
   //
-  submitCallback = function(){
+  submitCallback = function(e){
     var result = {}
     //this part will be used if your field is required. If your widget is required valid
     //property will be expected before form can be submitted
@@ -25,6 +25,9 @@
     result.value = "my precious data";
     //most probably you will call sendSubmit method
     JFCustomWidget.sendSubmit(result);
+    // debugging
+    console.log('submit callback');
+    console.log(e);
   }
   //
   JFCustomWidget.subscribe("submit", submitCallback);
