@@ -29,7 +29,7 @@
     console.log('submit callback');
     if(typeof(window.top.postMessage) !== 'undefined'){
       var val = {
-        'submit': 'result'
+        'submit': result
       }
       window.top.postMessage(val,'https://beta.nice.org.uk');
     }
