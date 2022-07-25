@@ -13,6 +13,7 @@
   //
   readyCallback = function(){
     console.log('ready');
+    console.log('ready: ',this);
   }
   JFCustomWidget.subscribe("ready", readyCallback());
   //
@@ -27,6 +28,7 @@
     JFCustomWidget.sendSubmit(result);
     // debugging
     console.log('submit callback');
+    console.log('submit: ',this);
   }
   //
   JFCustomWidget.subscribe("submit", submitCallback());
