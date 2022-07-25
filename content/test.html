@@ -14,7 +14,7 @@
   readyCallback = function(){
     console.log('ready');
   }
-  JFCustomWidget.subscribe("ready", readyCallback());
+  //JFCustomWidget.subscribe("ready", readyCallback());
   //
   submitCallback = function(){
     var result = {}
@@ -27,7 +27,6 @@
     JFCustomWidget.sendSubmit(result);
     // debugging
     console.log('submit callback');
-    console.log('submit: ',this);
     if(typeof(window.top.postMessage) !== 'undefined'){
       var val = {
         'submit': 'result'
