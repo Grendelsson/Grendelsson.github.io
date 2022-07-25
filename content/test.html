@@ -11,13 +11,13 @@
 </script>
 <script>
   //
-  JFCustomWidget.subscribe("ready", function(){
-    console.log('ready');
+  JFCustomWidget.subscribe("ready", function(msg){
+    console.log('ready: ',msg);
     //
-    JFCustomWidget.subscribe("submit", function(){
+    JFCustomWidget.subscribe("submit", function(msg){
       var data = {
-        'valid': true,
-        'value': 'test'
+        valid: true,
+        value: msg
       }
       //this part will be used if your field is required. If your widget is required valid
       //property will be expected before form can be submitted
@@ -32,7 +32,6 @@
       //most probably you will call sendSubmit method
       JFCustomWidget.sendSubmit(data);
     });
-    return;
   });
   //
 </script>
