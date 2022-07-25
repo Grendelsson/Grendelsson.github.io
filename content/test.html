@@ -8,26 +8,25 @@
     console.log('using callbacks');
     window.top.postMessage(val,'*');
   }
-  var  submitCallback = function(){
-    var msg = {}
-    //this part will be used if your field is required. If your widget is required valid
-    //property will be expected before form can be submitted
-    msg.valid = true;
-    //this is your field msg. You are expected to send value property as string
-    msg.value = "my precious data";
-    // debugging
-    console.log('submit callback');
-    var val = {
-      'submit': msg
-    }
-    window.top.postMessage(val,'https://beta.nice.org.uk');
-    //most probably you will call sendSubmit method
-    JFCustomWidget.sendSubmit(msg);
-  }
   // Actual stuff
   var readyCallback = function(){
     console.log("ready message arrived from JotForm");
-    JFCustomWidget.subscribe("submit", submitCallback());
+    JFCustomWidget.subscribe("submit", function(){
+      var msg = {}
+      //this part will be used if your field is required. If your widget is required valid
+      //property will be expected before form can be submitted
+      msg.valid = true;
+      //this is your field msg. You are expected to send value property as string
+      msg.value = "my precious data";
+      // debugging
+      console.log('submit callback');
+      var val = {
+        'submit': msg
+      }
+      window.top.postMessage(val,'https://beta.nice.org.uk');
+      //most probably you will call sendSubmit method
+      JFCustomWidget.sendSubmit(msg);
+    });
   }
   //subscribe to ready
   JFCustomWidget.subscribe("ready", readyCallback());
