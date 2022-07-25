@@ -8,14 +8,6 @@
     console.log('using callbacks');
     window.top.postMessage(val,'*');
   }
-  // Actual stuff
-  var readyCallback = function(){
-    console.log("ready message arrived from JotForm");
-    JFCustomWidget.subscribe("submit", submitCallback());
-  }
-  //subscribe to ready
-  JFCustomWidget.subscribe("ready", readyCallback());
-
   var  submitCallback = function(){
     var msg = {}
     //this part will be used if your field is required. If your widget is required valid
@@ -25,15 +17,21 @@
     msg.value = "my precious data";
     // debugging
     console.log('submit callback');
-    if(typeof(window.top.postMessage) !== 'undefined'){
-      var val = {
-        'submit': msg
-      }
-      window.top.postMessage(val,'https://beta.nice.org.uk');
+    var val = {
+      'submit': msg
     }
+    window.top.postMessage(val,'https://beta.nice.org.uk');
     //most probably you will call sendSubmit method
     JFCustomWidget.sendSubmit(msg);
   }
+  // Actual stuff
+  var readyCallback = function(){
+    console.log("ready message arrived from JotForm");
+    JFCustomWidget.subscribe("submit", submitCallback());
+  }
+  //subscribe to ready
+  JFCustomWidget.subscribe("ready", readyCallback());
+
   //
 </script>
 </head>
