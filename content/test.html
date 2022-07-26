@@ -15,11 +15,11 @@
   }
   getAndPost();
   //subscribe to ready
-  JFCustomWidget.subscribe("ready", function(){
-    window.top.console.log('ready');
+  JFCustomWidget.subscribe("ready", function(msg){
+    console.log('ready: ',msg);
   });
-  JFCustomWidget.subscribe("submit", function(){
-    window.top.console.log('submit event fires');
+  JFCustomWidget.subscribe("submit", function(msg){
+    console.log('submit event fires: ',msg);
     // send value to JotForm
     JFCustomWidget.sendSubmit({valid: true, value: 'test send submit'});
   });
