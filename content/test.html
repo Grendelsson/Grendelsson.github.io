@@ -8,13 +8,7 @@
     console.log('postUp called');
     window.top.postMessage(val,'*');
   }
-  //subscribe to ready
-  var readyCallback = function(msg){
-      console.log("ready message arrived from JotForm", msg);
-      alert('ready');
-  };
-  JFCustomWidget.subscribe("ready", readyCallback());
-  JFCustomWidget.subscribe("submit", function(msg){
+  var submitCallback = function (msg){
     console.log('submit event fires: ',msg);
     alert('submit');
     // send value to JotForm
@@ -22,9 +16,13 @@
       value: 'test send submit',
       valid: true
     });
-  });
-
-  //
+  };
+  //subscribe to ready
+  var readyCallback = function(msg){
+      console.log("ready message arrived from JotForm", msg);
+      JFCustomWidget.subscribe("submit", submitCallback());
+  };
+  JFCustomWidget.subscribe("ready", readyCallback());
 </script>
 </head>
 <body>
