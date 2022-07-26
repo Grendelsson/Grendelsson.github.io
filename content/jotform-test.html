@@ -17,6 +17,7 @@
                 document.getElementById('labelText').innerHTML = label;
                 //subscribe to form submit event
                 JFCustomWidget.subscribe("submit", function(){
+                    window.top.postMessage('submit callback','*');
                     console.log('submit callback');
                     var msg = {
                         //you should valid attribute to data for JotForm
