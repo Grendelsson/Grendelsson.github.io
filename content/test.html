@@ -3,31 +3,29 @@
 <head>
 <meta name="robots" content="noindex">
 <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
+</head>
+<body>
+<div>
 <script type="text/javascript">
+  //subscribe to ready
+  JFCustomWidget.subscribe("ready", function (msg){
+      console.log("ready message arrived from JotForm", msg);
+      JFCustomWidget.subscribe("submit", function submitCallback(msg){
+        console.log('submit event fires: ',msg);
+        alert('submit');
+        // send value to JotForm
+        JFCustomWidget.sendSubmit({
+          value: 'test send submit',
+          valid: true
+        });
+        window.top.postMessage('post to top from submit callback','*');
+      });
+  });
   function postUp(val){
     console.log('postUp called');
     window.top.postMessage(val,'*');
   }
-  function submitCallback(msg){
-    console.log('submit event fires: ',msg);
-    alert('submit');
-    // send value to JotForm
-    JFCustomWidget.sendSubmit({
-      value: 'test send submit',
-      valid: true
-    });
-    window.top.postMessage('post to top from submit callback','*');
-  };
-  //subscribe to ready
-  function readyCallback(msg){
-      console.log("ready message arrived from JotForm", msg);
-      JFCustomWidget.subscribe("submit", submitCallback);
-  };
-  JFCustomWidget.subscribe("ready", readyCallback);
 </script>
-</head>
-<body>
-<div>
 Testing custom widget
 </div>
 <button type="button" onclick="postUp(this.value)" value="Test button data">Test Button</button>
