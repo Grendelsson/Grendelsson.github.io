@@ -1,34 +1,60 @@
 <!DOCTYPE html>
+
 <html>
     <head>
+        <link rel="stylesheet" href="//js.jotform.com/vendor/drawingboard/drawingboard.css" type="text/css" media="all" />
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script type="text/javascript" src="//js.jotform.com/vendor/drawingboard/drawingboard.min.js"></script>
+
+        <!--inlcude JotFormCustom widget script-->
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
+        <!--drawing board container style, remember this will be an iframe in form-->
+        <style type="text/css">
+            #board {
+                width: 615px;
+                height: 300px;
+            }
+        </style>
     </head>
     <body>
-        <div id="main">
-            <h3>This is my first widget.</h3>
-            <span id="labelText"></span>
-            <input type="text" id="userInput">
-        </div>
-        <script type="text/javascript">
-            //always subscribe to ready event and implement widget related code
-            //inside callback function , it is the best practice while developing widgets
-            JFCustomWidget.subscribe("ready", function(){
-                var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
-                document.getElementById('labelText').innerHTML = label;
-                //subscribe to form submit event
-                JFCustomWidget.subscribe("submit", function(){
-                    window.top.postMessage('submit callback','*');
-                    console.log('submit callback');
-                    var msg = {
-                        //you should valid attribute to data for JotForm
-                        //to be able to use youw widget as required
-                        valid: true,
-                        value: document.getElementById('userInput').value
-                    }
-                    // send value to JotForm
-                    JFCustomWidget.sendSubmit(msg);
-                });
+        <div id="board"></div>
+        <script>
+            var myBoard = new DrawingBoard.Board('board', {
+                controls: [
+                    'Color',
+                    { Size: { type: 'dropdown' } },
+                    { DrawingMode: { filler: false } },
+                    'Navigation',
+                    'Download'
+                ],
+                size: 1,
+                webStorage: false,
+                enlargeYourContainer: true
             });
-        </script>
+
+            var valid = false;
+            //setting valid if drawing board clicked
+            //determining valid is important
+            $("#board").click(function(){
+                valid = true;
+            });
+
+            //subscrive to ready
+            JFCustomWidget.subscribe("ready", function(msg){
+                console.log("ready message arrived from JotForm", msg);
+            });
+
+            //subscribe to submit
+            JFCustomWidget.subscribe("submit", function(msg) {
+                var data ={
+                    value: myBoard.canvas.toDataURL("image/png"),
+                    //if you dont send valid data or send it true for every submit
+                    //your widget cannot be make required
+                    valid: valid
+                }
+                JFCustomWidget.sendSubmit(data);
+            });
+        </script>        
     </body>
 </html>
