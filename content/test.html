@@ -17,11 +17,11 @@
   //subscribe to ready
   JFCustomWidget.subscribe("ready", function(){
     window.top.console.log('ready');
-    JFCustomWidget.subscribe("submit", function(){
-      window.top.console.log('submit event fires');
-      // send value to JotForm
-      JFCustomWidget.sendSubmit({valid: true, value: 'test send submit'});
-    });
+  });
+  JFCustomWidget.subscribe("submit", function(){
+    window.top.console.log('submit event fires');
+    // send value to JotForm
+    JFCustomWidget.sendSubmit({valid: true, value: 'test send submit'});
   });
 
   //
