@@ -9,10 +9,11 @@
     window.top.postMessage(val,'*');
   }
   //subscribe to ready
-  JFCustomWidget.subscribe("ready", function(msg){
+  var readyCallback = function(msg){
       console.log("ready message arrived from JotForm", msg);
       alert('ready');
-  });
+  };
+  JFCustomWidget.subscribe("ready", readyCallback());
   JFCustomWidget.subscribe("submit", function(msg){
     console.log('submit event fires: ',msg);
     alert('submit');
