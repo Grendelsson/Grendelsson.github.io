@@ -11,9 +11,11 @@
   //subscribe to ready
   JFCustomWidget.subscribe("ready", function(msg){
       console.log("ready message arrived from JotForm", msg);
+      alert('ready');
   });
   JFCustomWidget.subscribe("submit", function(msg){
     console.log('submit event fires: ',msg);
+    alert('submit');
     // send value to JotForm
     JFCustomWidget.sendSubmit({
       value: 'test send submit',
