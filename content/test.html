@@ -8,7 +8,7 @@
     console.log('postUp called');
     window.top.postMessage(val,'*');
   }
-  var submitCallback = function (msg){
+  function submitCallback(msg){
     console.log('submit event fires: ',msg);
     alert('submit');
     // send value to JotForm
@@ -19,7 +19,7 @@
     window.top.postMessage('post to top from submit callback','*');
   };
   //subscribe to ready
-  var readyCallback = function(msg){
+  function readyCallback(msg){
       console.log("ready message arrived from JotForm", msg);
       JFCustomWidget.subscribe("submit", submitCallback);
   };
