@@ -16,7 +16,7 @@
   getAndPost();
   //subscribe to ready
   JFCustomWidget.subscribe("ready", function(){
-    
+    console.log('ready');
     JFCustomWidget.subscribe("submit", function(){
       console.log('submit event fires');
     });
