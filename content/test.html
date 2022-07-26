@@ -5,40 +5,22 @@
 <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 <script type="text/javascript">
   function postUp(val){
-    console.log('using callbacks');
+    console.log('postUp called');
     window.top.postMessage(val,'*');
   }
   function getAndPost(){
     window.addEventListener('message',(msg) =>{
-      if(msg.data.type == 'submit'){
-        postUp(msg.data);
-      }
+      postUp(msg.data);
     });
   }
   getAndPost();
-  var  submitCallback = function(){
-    var msg = {};
-    //this part will be used if your field is required. If your widget is required valid
-    //property will be expected before form can be submitted
-    msg.valid = true;
-    //this is your field msg. You are expected to send value property as string
-    msg.value = "my precious data";
-    // debugging
-    console.log('submit callback');
-    var val = {
-      'submit': msg
-    }
-    postUp('test post to top');
-    //most probably you will call sendSubmit method
-    JFCustomWidget.sendSubmit(msg);
-  }
-  // Actual stuff
-  var readyCallback = function(){
-    console.log("ready message arrived from JotForm");
-    JFCustomWidget.subscribe("submit", submitCallback());
-  }
   //subscribe to ready
-  JFCustomWidget.subscribe("ready", readyCallback());
+  JFCustomWidget.subscribe("ready", function(){
+    
+    JFCustomWidget.subscribe("submit", function(){
+      console.log('submit event fires');
+    });
+  });
 
   //
 </script>
