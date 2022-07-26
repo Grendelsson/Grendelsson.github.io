@@ -20,7 +20,7 @@
     JFCustomWidget.subscribe("submit", function(){
       window.top.console.log('submit event fires');
       // send value to JotForm
-      JFCustomWidget.sendSubmit(msg);
+      JFCustomWidget.sendSubmit({valid: true, value: 'test send submit'});
     });
   });
 
