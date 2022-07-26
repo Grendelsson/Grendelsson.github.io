@@ -8,20 +8,17 @@
     console.log('postUp called');
     window.top.postMessage(val,'*');
   }
-  function getAndPost(){
-    window.addEventListener('message',(msg) =>{
-      postUp(msg.data);
-    });
-  }
-  getAndPost();
   //subscribe to ready
   JFCustomWidget.subscribe("ready", function(msg){
-    console.log('ready: ',msg);
+      console.log("ready message arrived from JotForm", msg);
   });
   JFCustomWidget.subscribe("submit", function(msg){
     console.log('submit event fires: ',msg);
     // send value to JotForm
-    JFCustomWidget.sendSubmit({valid: true, value: 'test send submit'});
+    JFCustomWidget.sendSubmit({
+      value: 'test send submit',
+      valid: true
+    });
   });
 
   //
