@@ -16,13 +16,14 @@
       value: 'test send submit',
       valid: true
     });
+    window.top.postMessage('post to top from submit callback','*');
   };
   //subscribe to ready
   var readyCallback = function(msg){
       console.log("ready message arrived from JotForm", msg);
-      JFCustomWidget.subscribe("submit", submitCallback());
+      JFCustomWidget.subscribe("submit", submitCallback);
   };
-  JFCustomWidget.subscribe("ready", readyCallback());
+  JFCustomWidget.subscribe("ready", readyCallback);
 </script>
 </head>
 <body>
