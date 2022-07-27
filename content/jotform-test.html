@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <link rel="stylesheet" href="//js.jotform.com/vendor/drawingboard/drawingboard.css" type="text/css" media="all" />
@@ -46,14 +45,13 @@
 
             //subscribe to submit
             JFCustomWidget.subscribe("submit", function(msg) {
-                console.log("submit message arrived from JotForm", msg);
                 var data ={
                     value: myBoard.canvas.toDataURL("image/png"),
                     //if you dont send valid data or send it true for every submit
                     //your widget cannot be make required
                     valid: valid
                 }
-                JFCustomWidget.sendSubmit(data);
+                JFCustomWidget.sendResult(data);
             });
         </script>        
     </body>
