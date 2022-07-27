@@ -47,6 +47,7 @@
 
             //subscribe to submit
             JFCustomWidget.subscribe("submit", function(msg) {
+                console.log('submit callback');
                 var data ={
                     value: myBoard.canvas.toDataURL("image/png"),
                     //if you dont send valid data or send it true for every submit
