@@ -9,7 +9,7 @@
   // add listener to widget, posting up to top
   window.addEventListener('message',function (msg){
     console.log('widget-listener attached');
-    window.top.postMessage(msg.data,'*');
+    msg.source.postMessage(msg.data,msg.origin);
   });
   //subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
