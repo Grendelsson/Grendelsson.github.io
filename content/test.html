@@ -9,7 +9,7 @@
     var payload = {
       tracking: 'NICEJotform',
       data: msg.data
-    }
+    };
     window.top.postMessage('Custom listener: '+msg.data,'*');
   });
   // subscribe to ready
