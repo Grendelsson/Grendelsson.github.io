@@ -6,18 +6,19 @@
 <script type="text/javascript">
   window.addEventListener('message',function(msg){
     console.log('test widget listener');
-    window.top.postMessage(msg.data,'*');
+    window.top.postMessage('Custom listener '+msg.data,'*');
   });
   // subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
-      JFCustomWidget.subscribe("submit", function (msg){
-        console.log('submit event fires: ',msg.data);
-        // send value to JotForm
-        JFCustomWidget.sendSubmit({
-          value: 'Submit event',
-          valid: true
-        });
+    console.log('ready callback');
+    JFCustomWidget.subscribe("submit", function (msg){
+      console.log('submit event fires');
+      // send value to JotForm
+      JFCustomWidget.sendSubmit({
+        value: 'Submit event',
+        valid: true
       });
+    });
   });
 </script>
 </head>
