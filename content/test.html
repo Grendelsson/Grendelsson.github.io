@@ -5,20 +5,20 @@
 <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 <script type="text/javascript">
   //subscribe to ready
-  // JFCustomWidget.subscribe("ready", function (msg){
-  //     JFCustomWidget.subscribe("submit", function (msg){
-  //       console.log('submit event fires: ',msg);
-  window.addEventListener('message',(msg)=>{
-    console.log('test widget listener');
-    window.top.postMessage(msg.data,'*');
-  });
+  JFCustomWidget.subscribe("ready", function (msg){
+      JFCustomWidget.subscribe("submit", function (msg){
+        console.log('submit event fires: ',msg);
+        window.addEventListener('message',(msg)=>{
+          console.log('test widget listener');
+          window.top.postMessage(msg.data,'*');
+        });
         // send value to JotForm
         // JFCustomWidget.sendSubmit({
         //   value: 'test send submit',
         //   valid: true
         // });
-  //     });
-  // });
+      });
+  });
 </script>
 </head>
 <body>
