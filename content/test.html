@@ -10,7 +10,7 @@
       tracking: 'NICEJotform',
       data: msg.data
     };
-    window.top.postMessage('Custom listener: '+msg.data,'*');
+    window.top.postMessage(payload,'*');
   });
   // subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
