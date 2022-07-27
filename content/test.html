@@ -5,8 +5,8 @@
 <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 <script type="text/javascript">
   window.addEventListener('message',function(msg){
-    console.log('test widget listener');
-    window.top.postMessage('Custom listener '+msg.data,'*');
+    //console.log('test widget listener');
+    window.top.postMessage('Custom listener: '+msg.data,'*');
   });
   // subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
