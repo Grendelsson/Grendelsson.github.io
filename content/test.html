@@ -7,17 +7,17 @@
 <body>
 <script type="text/javascript">
   //subscribe to ready
-  JFCustomWidget.subscribe("ready", function (msg){
-      JFCustomWidget.subscribe("submit", function (msg){
-        console.log('submit event fires: ',msg);
+  // JFCustomWidget.subscribe("ready", function (msg){
+  //     JFCustomWidget.subscribe("submit", function (msg){
+  //       console.log('submit event fires: ',msg);
         window.top.postMessage('post to top from submit callback','*');
         // send value to JotForm
         // JFCustomWidget.sendSubmit({
         //   value: 'test send submit',
         //   valid: true
         // });
-      });
-  });
+  //     });
+  // });
 </script>
 </body>
 </html>
