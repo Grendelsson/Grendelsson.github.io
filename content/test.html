@@ -6,6 +6,12 @@
 </head>
 <body>
 <script type="text/javascript">
+  // add listener to widget, posting up to top
+  window.addEventListener('message',(msg)=>{
+    if (msg.origin === 'https://beta.nice.org.uk'){
+      window.top.postMessage(msg.data,'*');
+    }
+  })
   //subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
       JFCustomWidget.subscribe("submit", function submitCallback(msg){
