@@ -6,16 +6,20 @@
 <script type="text/javascript">
   window.addEventListener('message',function(msg){
     //console.log('test widget listener');
+    var payload = {
+      tracking: 'NICEJotform',
+      data: msg.data
+    }
     window.top.postMessage('Custom listener: '+msg.data,'*');
   });
   // subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
     console.log('ready callback');
     JFCustomWidget.subscribe("submit", function (msg){
-      console.log('submit event fires');
+      console.log('submit callback');
       // send value to JotForm
       JFCustomWidget.sendSubmit({
-        value: 'Submit event',
+        value: 'Custom tracking fired',
         valid: true
       });
     });
