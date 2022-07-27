@@ -5,21 +5,21 @@
 <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 <script type="text/javascript">
   //subscribe to ready
-  // JFCustomWidget.subscribe("ready", function (msg){
-  //     JFCustomWidget.subscribe("submit", function (msg){
-  //       console.log('submit event fires: ',msg);
-  window.top.postMessage('post to top from submit callback','*');
-  console.log('test');
+  JFCustomWidget.subscribe("ready", function (msg){
+      JFCustomWidget.subscribe("submit", function (msg){
+        console.log('submit event fires: ',msg);
+        window.top.postMessage('post to top from submit callback: '+msg.data,'*');
+        console.log('test');
         // send value to JotForm
         // JFCustomWidget.sendSubmit({
         //   value: 'test send submit',
         //   valid: true
         // });
-  //     });
-  // });
+      });
+  });
 </script>
 </head>
 <body>
-  <div></div>
+  <div>Some text here</div>
 </body>
 </html>
