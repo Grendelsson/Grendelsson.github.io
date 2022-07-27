@@ -6,11 +6,6 @@
 </head>
 <body>
 <script type="text/javascript">
-  // add listener to widget, posting up to top
-  window.addEventListener('message',function (msg){
-    console.log('widget-listener attached');
-    window.top.postMessage(msg.data,'*');
-  });
   //subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
       JFCustomWidget.subscribe("submit", function submitCallback(msg){
@@ -23,13 +18,6 @@
         // });
       });
   });
-  function postUp(val){
-    console.log('postUp called');
-    window.top.postMessage(val,'*');
-  }
 </script>
-<div>
-</div>
-<button type="button" onclick="postUp(this.value)" value="Test button data">Test Button</button>
 </body>
 </html>
