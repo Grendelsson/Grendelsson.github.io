@@ -24,7 +24,7 @@
       window.top.postMessage(payload,'*');
       // send value to JotForm
       JFCustomWidget.sendSubmit({
-        value: 'Custom tracking fired',
+        value: msg.data,
         valid: true
       });
     });
