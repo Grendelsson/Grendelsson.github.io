@@ -4,19 +4,24 @@
 <meta name="robots" content="noindex">
 <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 <script type="text/javascript">
-  window.addEventListener('message',function(msg){
-    //console.log('test widget listener');
-    var payload = {
-      tracking: 'NICEJotform',
-      data: msg.data
-    };
-    window.top.postMessage(payload,'*');
-  });
+  // window.addEventListener('message',function(msg){
+  //   //console.log('test widget listener');
+  //   var payload = {
+  //     tracking: 'NICEJotform',
+  //     data: msg.data
+  //   };
+  //   window.top.postMessage(payload,'*');
+  // });
   // subscribe to ready
   JFCustomWidget.subscribe("ready", function (msg){
     console.log('ready callback');
     JFCustomWidget.subscribe("submit", function (msg){
       console.log('submit callback');
+      var payload = {
+        tracking: 'NICEJotform',
+        data: msg.data
+      };
+      window.top.postMessage(payload,'*');
       // send value to JotForm
       JFCustomWidget.sendSubmit({
         value: 'Custom tracking fired',
