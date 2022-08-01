@@ -13,13 +13,13 @@
   //   window.top.postMessage(payload,'*');
   // });
   // subscribe to ready
-  JFCustomWidget.subscribe("ready", function (msg){
+  JFCustomWidget.subscribe("ready", function (){
     console.log('ready callback');
     JFCustomWidget.subscribe("submit", function (msg){
       console.log('submit callback');
       var payload = {
         tracking: 'NICEJotform',
-        data: msg.data
+        data: msg.data || msg
       };
       window.top.postMessage(payload,'*');
       // send value to JotForm
