@@ -2,59 +2,10 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="//js.jotform.com/vendor/drawingboard/drawingboard.css" type="text/css" media="all" />
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script type="text/javascript" src="//js.jotform.com/vendor/drawingboard/drawingboard.min.js"></script>
-
-        <!--inlcude JotFormCustom widget script-->
-        <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
-        <!--drawing board container style, remember this will be an iframe in form-->
-        <style type="text/css">
-            #board {
-                width: 615px;
-                height: 300px;
-            }
-        </style>
+        <title>Testing for jotform widget</title>
     </head>
     <body>
-        <div id="board"></div>
-        <script>
-            var myBoard = new DrawingBoard.Board('board', {
-                controls: [
-                    'Color',
-                    { Size: { type: 'dropdown' } },
-                    { DrawingMode: { filler: false } },
-                    'Navigation',
-                    'Download'
-                ],
-                size: 1,
-                webStorage: false,
-                enlargeYourContainer: true
-            });
-
-            var valid = false;
-            //setting valid if drawing board clicked
-            //determining valid is important
-            $("#board").click(function(){
-                valid = true;
-            });
-
-            //subscrive to ready
-            JFCustomWidget.subscribe("ready", function(msg){
-                console.log("ready message arrived from JotForm", msg);
-            });
-
-            //subscribe to submit
-            JFCustomWidget.subscribe("submit", function(msg) {
-                var data ={
-                    value: myBoard.canvas.toDataURL("image/png"),
-                    //if you dont send valid data or send it true for every submit
-                    //your widget cannot be make required
-                    valid: valid
-                }
-                JFCustomWidget.sendResult(data);
-            });
-        </script>        
+        <iframe src="https://www.nice.org.uk/Media/Default/guidance/NG136-visual-summary.png">
+        </iframe>
     </body>
 </html>
