@@ -5,7 +5,7 @@
 #    2. Remove top & right ticks
 #    3. Give Title a Magenta Color(?)
 
-figure.facecolor    : f7f4f1
+figure.facecolor    : pink
 figure.constrained_layout.h_pad:  0.08334
 figure.constrained_layout.w_pad:  0.08334
 
@@ -26,22 +26,22 @@ axes.labelpad       : 8.0
 axes.labelsize      : 16
 axes.labelcolor     : black
 axes.facecolor      : white
-axes.edgecolor      : deeppink
+axes.edgecolor      : d6d6d6
 axes.axisbelow      : True
 axes.prop_cycle    : cycler('color', ['00436c', 'd17c4d', '39916d', 'dc8a07', 'CB4B16', 'b50f23', 'D33682', '6C71C4'])
 axes.grid.axis      : x
 axes.grid           : True
 
 ### GRID
-grid.color          : deeppink    # grid color
+grid.color          : d6d6d6    # grid color
 grid.linestyle      : -         # line
 grid.linewidth      : 1         # in points
 
 ### TICKS
-xtick.color         : deeppink
+xtick.color         : d6d6d6
 xtick.direction     : out
 xtick.labelcolor    : black
-ytick.color         : deeppink
+ytick.color         : d6d6d6
 ytick.direction     : out
 ytick.labelcolor    : black
 
