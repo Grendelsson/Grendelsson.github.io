@@ -26,22 +26,22 @@ axes.labelpad       : 8.0
 axes.labelsize      : 16
 axes.labelcolor     : black
 axes.facecolor      : white
-axes.edgecolor      : d6d6d6
+axes.edgecolor      : deeppink
 axes.axisbelow      : True
 axes.prop_cycle    : cycler('color', ['00436c', 'd17c4d', '39916d', 'dc8a07', 'CB4B16', 'b50f23', 'D33682', '6C71C4'])
 axes.grid.axis      : x
 axes.grid           : True
 
 ### GRID
-grid.color          : d6d6d6    # grid color
+grid.color          : deeppink    # grid color
 grid.linestyle      : -         # line
 grid.linewidth      : 1         # in points
 
 ### TICKS
-xtick.color         : d6d6d6
+xtick.color         : deeppink
 xtick.direction     : out
 xtick.labelcolor    : black
-ytick.color         : d6d6d6
+ytick.color         : deeppink
 ytick.direction     : out
 ytick.labelcolor    : black
 
