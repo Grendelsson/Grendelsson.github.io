@@ -28,9 +28,10 @@ axes.labelcolor     : black
 axes.facecolor      : white
 axes.edgecolor      : d6d6d6
 axes.axisbelow      : True
-axes.prop_cycle    : cycler('color', ['00436c', 'd17c4d', '39916d', 'dc8a07', 'CB4B16', 'b50f23', 'D33682', '6C71C4'])
+axes.prop_cycle     : cycler('color', ['00436c', 'd17c4d', '39916d', 'dc8a07', 'CB4B16', 'b50f23', 'D33682', '6C71C4'])
 axes.grid.axis      : x
 axes.grid           : True
+axes.set_major_formatter : ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
 
 ### GRID
 grid.color          : d6d6d6    # grid color
